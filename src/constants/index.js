@@ -1,5 +1,3 @@
-export const NavLists = ["", "CONTACTOS"];
-
 export const NavList = [
   {
     route: "/",
@@ -35,7 +33,7 @@ export const cardList = [
   },
   {
     id: 4,
-    imgUrl: "./assets/intranet.jpg",
+    imgUrl: "./assets/icons/proactive.jpg",
     route: "https://examenesusuarios.hsalvador.cl/",
     label: "Proactive LIS",
   },
