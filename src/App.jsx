@@ -1,18 +1,18 @@
 import Navbar from "./components/Navbar";
 import GridCard from "./components/GridCard";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Numeros from "./Numeros";
+import Tests from "./pages/Tests";
 
 export default function App() {
   return (
-    <Router>
-      <main>
+    <>
+      <Router>
         <Navbar />
-        <GridCard />
         <Routes>
-          <Route path="/Numeros" element={<Numeros />} />
+          <Route path="/" element={<GridCard />} />
+          <Route path="/test" element={<Tests />} />
         </Routes>
-      </main>
-    </Router>
+      </Router>
+    </>
   );
 }

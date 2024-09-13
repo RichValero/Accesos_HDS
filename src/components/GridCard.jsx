@@ -39,6 +39,7 @@ const GridCard = () => {
       <div className="grid grid-cols-6 gap-4 xsm:max-2xl:grid-cols-1 sm:max-2xl:grid-cols-2 md:max-2xl:grid-cols-3 lg:max-2xl:grid-cols-4 px-[250px] sm:max-xl:px-[50px] md:max-xl:px-[100px] py-10 ">
         {filteredCards.map((card) => (
           <a
+            target="_blank"
             key={card}
             href={card.route}
             className="group block max-w-xs mx-auto rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-primary hover:ring-primary w-[190px] h-[200px]"

@@ -17,7 +17,7 @@ const Navbar = () => {
                 <p className="text-3xl px-5">{nav.title}</p>
               </a>
               <p className="hover:bg-secondary hover:text-primary rounded-lg text-2xl px-4">
-                <Link to={"./Numeros"}>{nav.label}</Link>
+                <Link to={"/test"}>{nav.label}</Link>
               </p>
             </div>
           ))}
