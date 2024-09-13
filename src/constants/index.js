@@ -1,10 +1,10 @@
 export const NavList = [
   {
     route: "/",
-    label: "ACCESO DIRECTO A PLATAFORMAS HOSPITALARIAS",
+    title: "ACCESO DIRECTO A PLATAFORMAS HOSPITALARIAS",
   },
   {
-    route: "/contactos",
+    route: "./Numeros",
     label: "Contactos",
   },
   // {

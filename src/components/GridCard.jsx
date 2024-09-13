@@ -15,28 +15,28 @@ const GridCard = () => {
 
   return (
     <>
-      <div className="flex w-full px-[250px] gap-4 justify-start items-center">
+      <div className="flex px-[260px] pt-10 gap-4 justify-start items-center">
         <p className="text-primary font-semibold">Filtrar por:</p>
         <button
-          className="text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-bold"
+          className="text-primary hover:bg-secondary hover:text-white px-4 py-2 rounded-lg font-bold"
           onClick={() => handleFilter("admin")}
         >
           Administrativas
         </button>
         <button
-          className="text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-bold"
+          className="text-primary hover:bg-secondary hover:text-white px-4 py-2 rounded-lg font-bold"
           onClick={() => handleFilter("clinic")}
         >
           Clinicas
         </button>
         <button
-          className="text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-bold"
+          className="text-primary hover:bg-secondary hover:text-white px-4 py-2 rounded-lg font-bold"
           onClick={() => handleFilter("all")}
         >
           Todas
         </button>
       </div>
-      <div className="grid grid-cols-6 gap-4 xsm:max-2xl:grid-cols-1 sm:max-2xl:grid-cols-2 md:max-2xl:grid-cols-3 lg:max-2xl:grid-cols-4 px-[250px] sm:max-xl:px-[50px] md:max-xl:px-[100px] py-[100px] ">
+      <div className="grid grid-cols-6 gap-4 xsm:max-2xl:grid-cols-1 sm:max-2xl:grid-cols-2 md:max-2xl:grid-cols-3 lg:max-2xl:grid-cols-4 px-[250px] sm:max-xl:px-[50px] md:max-xl:px-[100px] py-10 ">
         {filteredCards.map((card) => (
           <a
             key={card}
