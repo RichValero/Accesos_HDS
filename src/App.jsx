@@ -1,7 +1,8 @@
 import Navbar from "./components/Navbar";
 import GridCard from "./components/GridCard";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Tests from "./pages/Tests";
+import Contacts from "./pages/Contacts";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
@@ -9,8 +10,8 @@ export default function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<GridCard />} />
-          <Route path="/test" element={<Tests />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </Router>
     </>

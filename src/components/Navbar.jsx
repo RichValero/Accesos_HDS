@@ -9,15 +9,20 @@ const Navbar = () => {
           <img
             src="./assets/logo.jpg"
             alt="logo"
-            className="m-0 w-[350px] h-[90px]"
+            className="m-0 w-[350px] h-[90px] md:max-2xl:hidden sm:max-2xl:hidden xsm:max-2xl:hidden"
           />
-          {NavList.map((nav, i) => (
-            <div key={i} className="text-primary font-bold">
+          <img
+            src="./assets/hdslogo.jpg"
+            alt="logo"
+            className="m-0 hidden md:max-2xl:block sm:max-2xl:block xsm:max-2xl:block"
+          />
+          {NavList.map((nav, index) => (
+            <div key={index} className="text-primary font-bold">
               <a href={nav.route}>
-                <p className="text-3xl px-5">{nav.title}</p>
+                <p className="text-3xl px-5 lg:block">{nav.title}</p>
               </a>
-              <p className="hover:bg-secondary hover:text-primary rounded-lg text-2xl px-4">
-                <Link to={"/test"}>{nav.label}</Link>
+              <p className="hover:bg-secondary hover:text-white rounded-lg text-3xl px-4">
+                <Link to={"/contacts"}>{nav.label}</Link>
               </p>
             </div>
           ))}
