@@ -14,8 +14,8 @@ const Card = () => {
   );
 
   return (
-    <>
-      <div className="flex flex-1 px-[260px] pt-10 gap-4 justify-start items-center sm:max-xsm:flex-col sm:max-xl:px-[100px] md:max-xl:px-[150px]">
+    <section className="mx-auto px-10">
+      <div className="flex flex-1 pt-10 gap-4 justify-center items-center sm:max-xsm:flex-col sm:max-xl:px-[100px] md:max-xl:px-[150px]">
         <p className="text-primary text-xl font-semibold">Mostrar:</p>
         <button
           className={`transition-all px-4 py-2 rounded-lg font-bold ${
@@ -44,7 +44,7 @@ const Card = () => {
           Todas
         </button>
       </div>
-      <div className="grid grid-cols-6 gap-4 xsm:max-2xl:grid-cols-1 sm:max-2xl:grid-cols-2 md:max-2xl:grid-cols-3 lg:max-2xl:grid-cols-4 px-[250px] sm:max-xl:px-[50px] md:max-xl:px-[100px] py-10 ">
+      <div className="grid grid-cols-6 gap-4 xsm:max-2xl:grid-cols-1 sm:max-2xl:grid-cols-2 md:max-2xl:grid-cols-3 lg:max-2xl:grid-cols-4 relative mx-auto sm:max-xl:px-[50px] md:max-xl:px-[100px] py-10 ">
         {filteredCards.map((card, index) => (
           <a
             target="_blank"
@@ -66,7 +66,7 @@ const Card = () => {
           </a>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

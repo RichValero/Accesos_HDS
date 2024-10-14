@@ -1,16 +1,28 @@
 export const NavList = [
   {
     route: "/",
-    title: "ACCESO DIRECTO A PLATAFORMAS HOSPITALARIAS",
-    subtitle: "ACCESOS HDS",
+    label: "Inicio",
   },
   {
-    route: "./Numeros",
+    route: "/",
+    label: "Tickets Informatica",
+  },
+  {
+    route: "/contacts",
     label: "Contactos",
   },
-  // {
-  //   label: "Clave Amarilla 254243 - Desde Celular: 2-2575-4243",
-  // },
+];
+
+export const headerList = [
+  {
+    label: "Av. Salvador 364, Providencia RM",
+  },
+  {
+    label: "soporte@hsalvador.cl",
+  },
+  {
+    label: "2 25753934 / (253851)",
+  },
 ];
 
 export const cardList = [
