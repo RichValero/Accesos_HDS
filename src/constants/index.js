@@ -184,9 +184,9 @@ export const contactList = [
   },
   {
     id: 4,
-    title: "Solicitud Toner",
+    title: "SOLICITUD DE TONER",
     subtitle: "Solo via correo",
-    email: "SOPORTE@HSALVADOR.CL",
+    email: "IMPRESORAS@HSALVADOR.CL",
   },
   {
     id: 5,
