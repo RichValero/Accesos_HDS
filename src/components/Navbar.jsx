@@ -25,8 +25,13 @@ const Navbar = () => {
             width={300}
             height={70}
           />
-          <p className="text-white px-4 font-semibold ">
-            <Link to={"/"}>Inicio</Link>
+          <p className="text-white px-4 font-semibold">
+            <Link
+              to={"/"}
+              className=" hover:bg-secondary rounded-lg transition-colors duration-500 px-3 py-1"
+            >
+              Inicio
+            </Link>
           </p>
           <div className="flex gap-5 items-center">
             <div className="border-l-2 h-7" />
@@ -35,7 +40,7 @@ const Navbar = () => {
                 href="https://ticket.hsalvador.cl/Informatica/upload/"
                 target="_blank"
               >
-                Ticket Informatica
+                Ticket Informática
               </a>
             </p>
             <div className="border-l-2 h-7 " />

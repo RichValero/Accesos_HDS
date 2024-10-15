@@ -25,7 +25,7 @@ const Footer = () => {
               href="https://ticket.hsalvador.cl/Informatica/upload/"
               target="_blank"
             >
-              Tickets Informatica
+              Ticket Informática
             </a>
           </p>
         </div>

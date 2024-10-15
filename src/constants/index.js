@@ -5,7 +5,7 @@ export const NavList = [
   },
   {
     route: "/",
-    label: "Tickets Informatica",
+    label: "Tickets Informática",
   },
   {
     route: "/contacts",
@@ -139,28 +139,28 @@ export const cardList = [
     id: 15,
     imgUrl: "./assets/icons/intranet.png",
     route: "https://infectologia.hsalvador.cl/",
-    label: "Infectologia",
+    label: "Infectología",
     category: "clinic",
   },
   {
     id: 16,
     imgUrl: "./assets/icons/intranet.png",
     route: "https://oftalmologia.hsalvador.cl/",
-    label: "Oftalmologia",
+    label: "Oftalmología",
     category: "clinic",
   },
   {
     id: 18,
     imgUrl: "./assets/icons/intranet.png",
     route: "https://laboratorio.hsalvador.cl/hematologia/",
-    label: "Laboratorio Hematologia",
+    label: "Laboratorio Hematología",
     category: "clinic",
   },
   {
     id: 3,
     imgUrl: "./assets/icons/proactive.jpg",
     route: "https://examenespacientes.hsalvador.cl/",
-    label: "Examenes Pacientes HDS",
+    label: "Exámenes Pacientes HDS",
     category: "clinic",
   },
 ];
@@ -173,12 +173,12 @@ export const contactList = [
   },
   {
     id: 1,
-    title: "INFORMATICA",
+    title: "INFORMÁTICA",
     subtitle: "Anexo:  253851",
   },
   {
     id: 2,
-    title: "MANTENCION",
+    title: "MANTENCIÓN",
     subtitle: "Anexo: 254213",
   },
   {
@@ -189,7 +189,7 @@ export const contactList = [
   },
   {
     id: 4,
-    title: "SOLICITUD DE TONER",
+    title: "SOLICITUD DE TÓNER",
     subtitle: "Solo via correo",
     email: "IMPRESORAS@HSALVADOR.CL",
   },

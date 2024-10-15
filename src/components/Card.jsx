@@ -35,7 +35,7 @@ const Card = () => {
           }`}
           onClick={() => handleFilter("clinic")}
         >
-          Clinicas
+          Clínicas
         </button>
         <button
           className="text-primary hover:bg-secondary hover:text-white transition-colors duration-500 px-4 py-1 rounded-lg font-bold"
