@@ -184,7 +184,7 @@ export const contactList = [
   {
     id: 3,
     title: "TRAKCARE",
-    subtitle: "Anexo:  254333",
+    subtitle: "Anexo:  254333 / 287210",
     email: "SOPORTESIDRAHDS@HSALVADOR.CL",
   },
   {
