@@ -50,7 +50,7 @@ const Card = () => {
             target="_blank"
             key={index}
             href={card.route}
-            className="group block max-w-xs mx-auto rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-primary hover:ring-primary transition-all duration-500 w-[190px] h-[200px]"
+            className="group block max-w-xs mx-auto rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-primary hover:ring-primary transition-all duration-300 w-[190px] h-[200px]"
           >
             <div className="flex justify-center space-x-3">
               <img
