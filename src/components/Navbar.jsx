@@ -6,8 +6,8 @@ const Navbar = () => {
     <header>
       <nav>
         <div className="w-full flex bg-s2 py-1">
-          {headerList.map((item) => (
-            <p className=" text-white px-2 flex items-center gap-2">
+          {headerList.map((item, index) => (
+            <p className=" text-white px-2 flex items-center gap-2" key={index}>
               <img
                 src={item.imgUrl}
                 alt="icon"
@@ -21,22 +21,29 @@ const Navbar = () => {
           <img
             src="./assets/logohds.png"
             alt="logo"
-            className="object-cover w-[300px] h-[70px] px-10"
+            className="object-contain w-[300px] h-[70px] px-10"
             width={300}
             height={70}
           />
-          <p className="text-white px-4 font-semibold">
+          <p className="text-white px-4 font-semibold ">
             <Link to={"/"}>Inicio</Link>
           </p>
           <div className="flex gap-5 items-center">
             <div className="border-l-2 h-7" />
-            <p className="text-white font-semibold">Ticket Informatica</p>
+            <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
+              <a
+                href="https://ticket.hsalvador.cl/Informatica/upload/"
+                target="_blank"
+              >
+                Ticket Informatica
+              </a>
+            </p>
             <div className="border-l-2 h-7 " />
             <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
               <Link to={"/contacts"}>Contactos</Link>
             </p>
             <div className="border-l-2 h-7" />
-            <p className="text-white font-bold text-2xl absolute right-10">
+            <p className="text-white font-bold text-2xl absolute right-10 max-2xl:hidden sm:max-lg:hidden xsm:max-lg:hidden">
               ACCESO DIRECTO A PLATAFORMAS HOSPITALARIAS
             </p>
           </div>

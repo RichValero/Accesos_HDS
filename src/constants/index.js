@@ -24,7 +24,7 @@ export const headerList = [
   },
   {
     imgUrl: "./assets/phone.png",
-    label: "2 25753934 / (253851)",
+    label: "2 25753851 / (253851)",
   },
 ];
 
@@ -174,7 +174,7 @@ export const contactList = [
   {
     id: 2,
     title: "MANTENCION",
-    subtitle: "Anexo:  123456",
+    subtitle: "Anexo:  ",
   },
   {
     id: 3,
