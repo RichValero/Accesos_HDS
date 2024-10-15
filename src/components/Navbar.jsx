@@ -5,9 +5,14 @@ const Navbar = () => {
   return (
     <header>
       <nav>
-        <div className="w-full flex items-center bg-s2">
+        <div className="w-full flex bg-s2 py-1">
           {headerList.map((item) => (
-            <p className=" text-white px-8">
+            <p className=" text-white px-2 flex items-center gap-2">
+              <img
+                src={item.imgUrl}
+                alt="icon"
+                className="object-cover w-6 h-6"
+              />
               <Link to={item.route}>{item.label}</Link>
             </p>
           ))}
@@ -16,7 +21,9 @@ const Navbar = () => {
           <img
             src="./assets/logohds.png"
             alt="logo"
-            className="object-fit w-[350px] h-[80px] px-10"
+            className="object-cover w-[300px] h-[70px] px-10"
+            width={300}
+            height={70}
           />
           <p className="text-white px-4 font-semibold">
             <Link to={"/"}>Inicio</Link>

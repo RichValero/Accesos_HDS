@@ -15,12 +15,15 @@ export const NavList = [
 
 export const headerList = [
   {
+    imgUrl: "./assets/gps.png",
     label: "Av. Salvador 364, Providencia RM",
   },
   {
+    imgUrl: "./assets/email.png",
     label: "soporte@hsalvador.cl",
   },
   {
+    imgUrl: "./assets/phone.png",
     label: "2 25753934 / (253851)",
   },
 ];
