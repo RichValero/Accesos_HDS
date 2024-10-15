@@ -38,7 +38,7 @@ export const cardList = [
   {
     id: 1,
     imgUrl: "./assets/icons/intranet.png",
-    route: "http://10.6.201.3/MRIS/Login?ReturnUrl=%2fMRIS%2f", //nuevo link mris.hsalvador.cl
+    route: "https://ris.hsalvador.cl/",
     label: "MRIS",
     category: "clinic",
   },
@@ -75,14 +75,14 @@ export const cardList = [
   {
     id: 6,
     imgUrl: "./assets/icons/intranet.png",
-    route: "http://sam.hsalvador.cl/Loginv2.aspx?ReturnUrl=%2f",
+    route: "http://sam.hsalvador.cl/",
     label: "SAM",
     category: "clinic",
   },
   {
     id: 7,
     imgUrl: "./assets/icons/intranet.png",
-    route: "https://gesdoc.hsalvador.cl/GestorDocumental/login",
+    route: "https://gesdoc.hsalvador.cl/",
     label: "GESDOC",
     category: "admin",
   },
@@ -150,12 +150,17 @@ export const cardList = [
     category: "clinic",
   },
   {
-    //LINK DE HEMATOLOGIA CAMBIARA.
     id: 18,
     imgUrl: "./assets/icons/intranet.png",
-    route:
-      "https://laboratorio.hsalvador.cl/hematologia/Account/Login.aspx?ReturnUrl=%2fhematologia%2fBandejaEntradaMed%2fBandejaEntradaMed.aspx",
+    route: "https://laboratorio.hsalvador.cl/hematologia/",
     label: "Laboratorio Hematologia",
+    category: "clinic",
+  },
+  {
+    id: 3,
+    imgUrl: "./assets/icons/proactive.jpg",
+    route: "https://examenespacientes.hsalvador.cl/",
+    label: "Examenes Pacientes HDS",
     category: "clinic",
   },
 ];
