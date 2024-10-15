@@ -190,18 +190,18 @@ export const contactList = [
   {
     id: 4,
     title: "SOLICITUD DE TÓNER",
-    subtitle: "Solo via correo",
+    subtitle: "Solo vía correo",
     email: "IMPRESORAS@HSALVADOR.CL",
   },
   {
     id: 5,
     title: "SAM - GESDOC",
-    subtitle: "Solo via Correo",
+    subtitle: "Solo vía Correo",
     email: "DESARROLLO@HSALVADOR.CL",
   },
   {
     id: 6,
     title: "SEIS",
-    subtitle: "DATOS DE CONTACTO EN PAGINA SEIS",
+    subtitle: "DATOS DE CONTACTO EN PÁGINA SEIS",
   },
 ];
