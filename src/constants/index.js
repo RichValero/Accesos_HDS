@@ -38,7 +38,7 @@ export const cardList = [
   {
     id: 1,
     imgUrl: "./assets/icons/intranet.png",
-    router: "http://10.6.201.3/MRIS/Login?ReturnUrl=%2fMRIS%2f", //nuevo link mris.hsalvador.cl
+    route: "http://10.6.201.3/MRIS/Login?ReturnUrl=%2fMRIS%2f", //nuevo link mris.hsalvador.cl
     label: "MRIS",
     category: "clinic",
   },
