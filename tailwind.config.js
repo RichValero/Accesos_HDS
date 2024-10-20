@@ -9,7 +9,7 @@ export default {
         s2: "#191a1c",
       },
       screens: {
-        xsm: "300px",
+        xsm: "375px",
 
         // sm: "640px",
         // // => @media (min-width: 640px) { ... }
