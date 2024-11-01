@@ -11,7 +11,7 @@ const Contactos = () => {
             <p className="text-primary font-semibold text-xl">
               {contact.subtitle}
             </p>
-            <p className="text-primary font-semibold text-xl capita">
+            <p className="text-primary font-semibold text-xl">
               {contact.email}
             </p>
           </div>

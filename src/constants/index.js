@@ -157,6 +157,13 @@ export const cardList = [
     category: "clinic",
   },
   {
+    id: 18,
+    imgUrl: "./assets/icons/ssmo.jpg",
+    route: "https://bienestar.saludoriente.cl",
+    label: "Bienestar Oriente",
+    category: "clinic",
+  },
+  {
     id: 3,
     imgUrl: "./assets/icons/proactive.jpg",
     route: "https://examenespacientes.hsalvador.cl/",
