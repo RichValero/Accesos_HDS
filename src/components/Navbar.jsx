@@ -45,9 +45,17 @@ const Navbar = () => {
             </p>
             <div className="border-l-2 h-7 " />
             <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
-              <Link to={"/contacts"}>Contactos</Link>
+              <a
+                href="http://ticket.movilizacion.hsalvador.cl/"
+                target="_blank"
+              >
+                Ticket Movilización
+              </a>
             </p>
-            <div className="border-l-2 h-7" />
+            <div className="border-l-2 h-7 " />
+            <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
+              <Link to={"/contacts"}>Contactos Servicios</Link>
+            </p>
             <p className="text-white font-bold text-2xl absolute right-10 max-2xl:hidden sm:max-lg:hidden xsm:max-lg:hidden">
               ACCESO DIRECTO A PLATAFORMAS HOSPITALARIAS
             </p>

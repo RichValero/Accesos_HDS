@@ -26,6 +26,10 @@ export const headerList = [
     imgUrl: "./assets/phone.png",
     label: "2 25753851 / (253851)",
   },
+  {
+    imgUrl: "./assets/phone.png",
+    label: "CLAVE AMARILLA (254243)",
+  },
 ];
 
 export const cardList = [
@@ -98,7 +102,7 @@ export const cardList = [
     imgUrl: "./assets/icons/seis.jpg",
     route: "https://salvador.experthis.cl/produccion/login.php",
     label: "SEIS",
-    caterogy: "admin",
+    category: "admin",
   },
   {
     id: 10,
@@ -108,7 +112,7 @@ export const cardList = [
     category: "admin",
   },
   {
-    id: 1,
+    id: 11,
     imgUrl: "./assets/icons/serq.jpg",
     route: "https://salud.serq.cl/Account/Index?ReturnUrl=%2f",
     label: "SerQ",
@@ -150,21 +154,36 @@ export const cardList = [
     category: "clinic",
   },
   {
-    id: 18,
+    id: 17,
     imgUrl: "./assets/icons/intranet.png",
     route: "https://laboratorio.hsalvador.cl/hematologia/",
     label: "Laboratorio Hematología",
     category: "clinic",
   },
+
   {
     id: 18,
     imgUrl: "./assets/icons/ssmo.jpg",
     route: "https://bienestar.saludoriente.cl",
     label: "Bienestar Oriente",
-    category: "clinic",
+    category: "admin",
   },
   {
-    id: 3,
+    id: 19,
+    imgUrl: "./assets/icons/intranet.png",
+    route: "https://cursos.hsalvador.cl/",
+    label: "Cursos HDS",
+    category: "admin",
+  },
+  {
+    id: 20,
+    imgUrl: "./assets/icons/intranet.png",
+    route: "https://www.hsalvador.cl",
+    label: "WEB HDS",
+    category: "admin",
+  },
+  {
+    id: 21,
     imgUrl: "./assets/icons/proactive.jpg",
     route: "https://examenespacientes.hsalvador.cl/",
     label: "Exámenes Pacientes HDS",
@@ -175,40 +194,41 @@ export const cardList = [
 export const contactList = [
   {
     id: 0,
-    title: "CLAVE AMARILLA",
-    subtitle: "Anexo: 254243",
-  },
-  {
-    id: 1,
     title: "INFORMÁTICA",
     subtitle: "Anexo:  253851",
   },
   {
+    id: 1,
+    title: "PROACTIVE LIS",
+    subtitle: "Anexo: 254245",
+    email: "Correo: abondi@hsalvador.cl",
+  },
+  {
     id: 2,
-    title: "MANTENCIÓN",
-    subtitle: "Anexo: 254213",
+    title: "TRAKCARE",
+    subtitle: "Anexo:  254333 / 287210",
+    email: "soportesidrahds@hsalvador.cl",
   },
   {
     id: 3,
-    title: "TRAKCARE",
-    subtitle: "Anexo:  254333 / 287210",
-    email: "SOPORTESIDRAHDS@HSALVADOR.CL",
+    title: "SOLICITUD DE TÓNER",
+    subtitle: "Solo vía correo",
+    email: "impresoras@hsalvador.cl",
   },
   {
     id: 4,
-    title: "SOLICITUD DE TÓNER",
+    title: "SAM - GESDOC",
     subtitle: "Solo vía correo",
-    email: "IMPRESORAS@HSALVADOR.CL",
+    email: "desarrollo@hsalvador.cl",
   },
   {
     id: 5,
-    title: "SAM - GESDOC",
-    subtitle: "Solo vía Correo",
-    email: "DESARROLLO@HSALVADOR.CL",
+    title: "SEIS",
+    email: "mesadeayuda@sistemasexpertos.cl",
   },
   {
     id: 6,
-    title: "SEIS",
-    subtitle: "DATOS DE CONTACTO EN PÁGINA SEIS",
+    title: "MANTENCIÓN",
+    subtitle: "Anexo: 254213",
   },
 ];
