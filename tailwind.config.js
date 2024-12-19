@@ -8,6 +8,10 @@ export default {
         secondary: "#00a1df",
         s2: "#191a1c",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       screens: {
         xsm: "375px",
 

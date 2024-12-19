@@ -1,5 +1,5 @@
 import React from "react";
-import { cardList } from "../constants";
+import { cardList } from "../utils/constants";
 import { useState } from "react";
 
 const Card = () => {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { NavList, headerList } from "../constants";
+import { headerList } from "../utils/constants";
 
 const Navbar = () => {
   return (
@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link to={"/contacts"}>Contactos Servicios</Link>
             </p>
             <p className="text-white font-bold text-2xl absolute right-10 max-2xl:hidden sm:max-lg:hidden xsm:max-lg:hidden">
-              ACCESO DIRECTO A PLATAFORMAS HOSPITALARIAS
+              <Link to={"/login"}> Inicio de Sesión</Link>
             </p>
           </div>
         </div>

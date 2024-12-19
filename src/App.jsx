@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import Login from "./pages/auth/Login";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
@@ -11,7 +14,10 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="contacts" element={<Contacts />} />
         </Routes>
         <Footer />
       </Router>
