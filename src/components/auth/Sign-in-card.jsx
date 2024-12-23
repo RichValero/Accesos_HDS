@@ -41,7 +41,7 @@ const SignInCard = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="px-3 border-2 border-gray-500 rounded-md h-10 mx-auto mb-3 text-slate-500 ring-offset-background focus:border-secondary w-full"
+                    className="px-3 border-2 border-gray-500 rounded-md h-10 mx-auto mb-3  w-full"
                     required
                     placeholder="correo@hsalvador.cl"
                     autoComplete="off"
@@ -61,7 +61,7 @@ const SignInCard = () => {
                     type="password"
                     id="password"
                     name="password"
-                    className="px-3 border-2 border-gray-500 rounded-md h-10 mb-4 w-full text-slate-700 focus:border-transparent"
+                    className="px-3 border-2 border-gray-500 rounded-md h-10 mb-4 w-full text-slate-700 "
                     required
                     placeholder="********"
                     autoComplete="off"
@@ -77,7 +77,7 @@ const SignInCard = () => {
                   Iniciar Sesión
                 </button>
               </div>
-              <p className="flex justify-center text-center font-poppins font-semibold">
+              <p className="flex justify-center text-center font-poppins">
                 Cuenta son solo para jefaturas. <br />
                 Son creadas por informatica.
               </p>
