@@ -21,38 +21,138 @@ export const Confirm = () => {
   // SHOWING THE DATA THAT WAS ENTERED BY THE USER FOR IT TO BE CONFIRMED
   return (
     <Form onSubmit={handleSubmit(submitData)}>
-      <h1 className="mb-4">Confirm</h1>
-      <Section title="Personal Information" url="/">
+      <h1 className="mb-5 text-2xl text-bold font-poppins text-primary">
+        Verificacion de Datos
+      </h1>
+      <Section title="Personal Information" url="/step">
         <SectionRow>
-          <div>First name</div>
-          <div>{state.firstName}</div>
+          <div>Nombre y Apellido: </div>
+          <div>{state.name}</div>
         </SectionRow>
 
         <SectionRow>
-          <div>Last Name</div>
-          <div>{state.lastName}</div>
+          <div>R.U.T: </div>
+          <div>{state.identification}</div>
         </SectionRow>
 
         <SectionRow>
-          <div>Email</div>
+          <div>Servicio o Departamento: </div>
+          <div>{state.department}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Cargo:</div>
+          <div>{state.cargo}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Anexo</div>
+          <div>{state.phone}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Correo</div>
           <div>{state.email}</div>
         </SectionRow>
       </Section>
-      <Section title="Education" url="/education">
+
+      {/* PERSONAL INFORMATION END */}
+
+      {/* VPN INFORMATION START */}
+      <Section title="Datos del Usuario de la VPN" url="/education">
         <SectionRow>
-          <div>University</div>
-          <div>state.university</div>
+          <div>Nombre y Apellido</div>
+          <div>{state.name2}</div>
         </SectionRow>
 
         <SectionRow>
-          <div>Degree</div>
-          <div>state.degree</div>
+          <div>R.U.T.</div>
+          <div>{state.rut}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Empresa o Establecimiento</div>
+          <div>{state.empresa}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Anexo</div>
+          <div>{state.phone2}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Cargo</div>
+          <div>{state.cargo2}</div>
+        </SectionRow>
+
+        <SectionRow>
+          <div>Correo</div>
+          <div>{state.email2}</div>
         </SectionRow>
       </Section>
-      <Section title="about" url="about">
+
+      {/* VPN INFORMATION END */}
+
+      {/* RESPONSABLE INFORMATION START */}
+
+      <Section title="Responsable de Autorizacion" url="/about">
         <SectionRow>
-          <div>About Me</div>
-          <div>state.about</div>
+          <div>Nombre y Apellido</div>
+          <div>{state.name3}</div>
+        </SectionRow>
+        <SectionRow>
+          <div>R.U.T.</div>
+          <div>{state.rut2}</div>
+        </SectionRow>
+        <SectionRow>
+          <div>Servicio o Departamento</div>
+          <div>{state.department2}</div>
+        </SectionRow>
+        <SectionRow>
+          <div>Anexo</div>
+          <div>{state.phone3}</div>
+        </SectionRow>
+        <SectionRow>
+          <div>Cargo</div>
+          <div>{state.cargo3}</div>
+        </SectionRow>
+        <SectionRow>
+          <div>Correo</div>
+          <div>{state.email3}</div>
+        </SectionRow>
+      </Section>
+      {/* RESPONSABLE INFORMATION END */}
+
+      {/*  */}
+
+      <Section title="Datos del Activo de Información" url="/asset">
+        <SectionRow>
+          <div>Direccin IP</div>
+          <div>{state.ipv4}</div>
+        </SectionRow>
+        <SectionRow>
+          <div>Puertos y Protocolos</div>
+          <div>{state.protocol}</div>
+        </SectionRow>
+        <SectionRow>
+          <div className=" rounded-md w-full">
+            <div>Fecha de solicitud:</div>
+            <div>{state.daterequest}</div>
+          </div>
+        </SectionRow>
+        <SectionRow>
+          <div className="flex flex-col justify-center space-y-2">
+            <div>Justificacion de la solicitud de VPN</div>
+            <div className="border-2 p-2 rounded-lg">
+              {state.vpnjustification}
+            </div>
+          </div>
+        </SectionRow>
+        <SectionRow>
+          <div className="flex flex-col justify-center space-y-2">
+            <div>Otras observaciones</div>
+            <div className="border-2 p-2 rounded-lg">{state.observations}</div>
+          </div>
         </SectionRow>
       </Section>
 

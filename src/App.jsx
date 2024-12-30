@@ -13,6 +13,7 @@ import { About } from "./pages/FormSteps/About";
 import { Confirm } from "./pages/FormSteps/Confirm";
 
 import { AppProvider } from "./hooks/state";
+import { Asset } from "./pages/FormSteps/Asset";
 export default function App() {
   return (
     <div>
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/step" element={<Contact />} />
             <Route path="/education" element={<Education />} />
             <Route path="/about" element={<About />} />
+            <Route path="/asset" element={<Asset />} />
             <Route path="/confirm" element={<Confirm />} />
             {/* VPN REQUEST FORM END */}
           </Routes>

@@ -9,11 +9,10 @@ export const Contact = () => {
   const {
     handleSubmit,
     register,
-    watch,
     formState: { errors },
   } = useForm({ defaultValues: state, mode: "onSubmit" });
 
-  const watchPassword = watch("password");
+  // const watchPassword = watch("password");
   const navigate = useNavigate();
 
   const saveData = (data) => {
@@ -23,49 +22,65 @@ export const Contact = () => {
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
-      <fieldset>
-        <legend>Contact</legend>
-        <Field label="First Name" error={errors?.firstName}>
+      <fieldset className="w-1/4">
+        <legend className="mb-4 font-poppins font-semibold">
+          Datos del solicitante
+        </legend>
+        <Field label="Nombre y Apellido" error={errors?.name}>
           <Input
-            {...register("firstName", { required: "First name is required" })}
-            id="first-name"
+            {...register("name", { required: "Campo requerido" })}
+            id="name"
+            placeholder="Pepito Perez"
           />
         </Field>
-        <Field label="Last Name" error={errors?.lastName}>
+        <Field label="R.U.T" error={errors?.identification}>
           <Input
-            {...register("lastName", { required: "Last name is required" })}
-            id="last-name"
+            {...register("identification", { required: "Campo requerido" })}
+            id="identification"
+            placeholder="12.345.678-9"
           />
         </Field>
-        <Field label="Email" error={errors?.email}>
+        <Field label="Servicio o Departamento" error={errors?.department}>
           <Input
-            {...register("email", { required: "Email is required" })}
+            {...register("department", { required: "Campo requerido" })}
+            id="department"
+            placeholder="Servicio o Departamento"
+          />
+        </Field>
+        <Field label="Cargo" error={errors?.cargo}>
+          <Input
+            {...register("cargo", { required: "Campo requerido" })}
+            id="cargo"
+            autoComplete="off"
+            placeholder="EU / TENS / COORDINADOR"
+          />
+        </Field>
+        <Field label="Anexo" error={errors?.phone}>
+          <Input
+            {...register("phone", {
+              required: "Numero de Telefono requerido",
+            })}
+            id="phone"
+            autoComplete="off"
+            placeholder="+56 9 1234 5678"
+          />
+        </Field>
+        <Field label="Correo" error={errors?.email}>
+          <Input
+            {...register("email", {
+              required: "Campo requerido",
+            })}
             type="email"
             id="email"
-          />
-        </Field>
-        <Field label="Password" error={errors?.password}>
-          <Input
-            {...register("password", { required: "Password is required" })}
-            type="password"
-            id="password"
             autoComplete="off"
+            placeholder="correo@hsalvador.cl"
           />
         </Field>
-        <Field label="Confirm Password" error={errors?.confirmPassword}>
-          <Input
-            {...register("confirmPassword", {
-              required: "Confirm password is required",
-              validate: (value) => {
-                value === watchPassword || "The passwords do not match";
-              }, //CHECKING IF PASSWORDS MATCH
-            })}
-            type="password"
-            id="confirm-password"
-            autoComplete="off"
-          />
-        </Field>
-        <Button>Next {">"}</Button>
+        <div className="mt-5">
+          <Button variant="primary" size="medium">
+            Siguiente {">"}
+          </Button>
+        </div>
       </fieldset>
     </Form>
   );

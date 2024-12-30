@@ -11,7 +11,7 @@ export const Form = ({ children, onSubmit, nextStep, ...props }) => {
 
   return (
     <form
-      className="flex flex-row"
+      className="flex flex-col justify-center items-center min-h-screen"
       onSubmit={onSubmitCustom}
       {...props}
       noValidate

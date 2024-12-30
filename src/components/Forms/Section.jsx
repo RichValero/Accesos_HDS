@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
+import { Button } from "./Button";
 
 export const Section = ({ title, children, url }) => {
   return (
-    <div className="flex w-full mb-4">
-      <div className="flex space-between items-center mb-4">
-        <h4>{title}</h4>
-        <Link className={`bg-secondary rounded-md px-4 py-2`} to={url}>
-          Edit
+    <div className="flex flex-col w-1/3 mb-5 pb-2 ">
+      {" "}
+      {/*border-2 border-blue-700*/}
+      <div className="flex justify-between  items-center mb-2 ">
+        <h4 className="text-2xl mb-3">{title}</h4>
+        <Link to={url}>
+          <Button variant="primary" size="small">
+            Editar
+          </Button>
         </Link>
       </div>
-      <div className="flex justify-center items-center bg-black">
+      <div className="flex flex-col justify-center items-center mb-3 space-y-1.5 font-montserrat font-medium ">
         {children}
       </div>
     </div>
@@ -17,7 +22,11 @@ export const Section = ({ title, children, url }) => {
 };
 
 export const SectionRow = ({ children }) => {
-  return <div className="flex w-full">{children}</div>;
+  return (
+    <div className="flex justify-between items-center gap-[100px] w-full">
+      {children}
+    </div>
+  );
 };
 
 //REMEMBER TO CHECK IF STYLING IS CORRECT

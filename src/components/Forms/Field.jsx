@@ -4,12 +4,14 @@ export const Field = ({ children, label, error }) => {
   const id = getChildId(children);
 
   return (
-    <div className="flex flex-col mb-3">
-      <label htmlFor={id} className="block">
+    <div className="flex flex-col mb-2 w-full">
+      <label htmlFor={id} className="block mb-1">
         {label}
       </label>
       {children}
-      {error && <small>{error.message}</small>}
+      {error && (
+        <small className="text-red-500 font-semibold">{error.message}</small>
+      )}
     </div>
   );
 };

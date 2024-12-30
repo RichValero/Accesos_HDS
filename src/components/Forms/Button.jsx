@@ -1,7 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
 
 export const Button = forwardRef(
-  ({ children, variant = "primary", ...props }, ref) => {
+  ({ children, variant = "primary", size = "medium", ...props }, ref) => {
     const buttonRef = useRef();
 
     useImperativeHandle(ref, () => ({
@@ -10,16 +10,35 @@ export const Button = forwardRef(
       },
     }));
 
+    const variantClasses = {
+      primary:
+        "bg-primary hover:bg-secondary text-white font-semibold hover:text-white hover:font-semibold transition-colors duration-500 flex gap-2 items-center",
+      secondary: "bg-secondary",
+      success: "bg-success", //OPTIONAL
+      danger: "bg-danger", //OPTIONAL
+      warning: "bg-warning", //OPTIONAL
+      info: "bg-info", //OPTIONAL
+      light: "bg-light", //OPTIONAL
+      dark: "bg-dark", //OPTIONAL
+    };
+
+    const sizeClasses = {
+      small: "px-2 py-1 mb-2 text-sm rounded-xl",
+      medium: "px-4 py-2 mb-4 text-md rounded-3xl",
+      large: "px-6 py-3 mb-6 text-lg rounded-3xl",
+    };
+
+    // const baseClasses = `rounded font-medium transition-all duration-200 ${}` IN CASE DISABLE IS NEEDED
+
+    const classes = `${variantClasses[variant]} ${sizeClasses[size]}`;
+
     return (
-      <button
-        className={`bg-${variant}-500 hover:bg-${variant}-600 text-black font-bold py-2 px-4 rounded-sm`}
-        {...props}
-        ref={buttonRef}
-      >
+      <button className={classes} ref={buttonRef} {...props}>
         {children}
       </button>
     );
   }
 );
 
+//`bg-${variant}  text-white font-semibold py-2 px-4 rounded-lg mb-5 inline-flex items-center justify-center`
 //REMEMBER TO LOOK WHAT FORWARDREF AND USEIMPERATIVEHANDLE DO

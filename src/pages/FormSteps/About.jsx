@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import { useAppState } from "../../hooks/state";
 import { Button, Field, Form, Input } from "../../components/Forms";
+import { ArrowLeftToLine, ArrowRightToLine } from "lucide-react";
 
 export const About = () => {
   const [state, setState] = useAppState();
@@ -10,25 +11,59 @@ export const About = () => {
 
   const saveData = (data) => {
     setState({ ...state, ...data });
-    navigate("/confirm");
+    navigate("/asset");
   };
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
-      <fieldset>
-        <legend>About</legend>
-        <Field label="About me">
-          <textarea
-            {...register("about")}
-            id="about"
-            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      <fieldset className="w-1/4">
+        <legend className="mb-4 font-poppins font-semibold">
+          Responsable de Autorizacion
+        </legend>
+        <Field label="Nombre y Apellido">
+          <Input
+            {...register("name3", { required: "Campo requerido" })}
+            id="name3"
+            placeholder="Nombre y Apellido"
           />
         </Field>
-        <div className="flex justify-between w-full">
-          <Link className="bg-secondary rounded-md px-4 py-2" to="/education">
-            {"<"} Previous
+        <Field label="R.U.T.">
+          <Input {...register("rut2")} id="rut2" placeholder="12.345.678-9" />
+        </Field>
+        <Field label="Servicio o Departamento">
+          <Input
+            {...register("department2")}
+            id="department2"
+            placeholder="Servicio"
+          />
+        </Field>
+        <Field label="Anexo">
+          <Input
+            {...register("phone3")}
+            id="phone3"
+            placeholder="+56 9 1234 5678"
+          />
+        </Field>
+        <Field label="Cargo">
+          <Input {...register("cargo3")} id="cargo3" placeholder="Cargo" />
+        </Field>
+        <Field label="Correo">
+          <Input
+            {...register("email3")}
+            id="email"
+            placeholder="correo@hsalvador.cl"
+          />
+        </Field>
+        <div className="flex justify-between w-full gap-2 mt-5">
+          <Link to="/education">
+            <Button variant="primary" size="medium">
+              <ArrowLeftToLine size={20} />
+              Regresar
+            </Button>
           </Link>
-          <Button>Next {">"}</Button>
+          <Button variant="primary" size="medium">
+            Siguiente <ArrowRightToLine size={20} />
+          </Button>
         </div>
       </fieldset>
     </Form>
