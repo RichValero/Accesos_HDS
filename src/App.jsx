@@ -14,12 +14,14 @@ import { Confirm } from "./pages/FormSteps/Confirm";
 
 import { AppProvider } from "./hooks/state";
 import { Asset } from "./pages/FormSteps/Asset";
+import { Stepper } from "./pages/FormSteps/Stepper";
 export default function App() {
   return (
     <div>
       <AppProvider>
         <Router>
           <Navbar />
+          <Stepper />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

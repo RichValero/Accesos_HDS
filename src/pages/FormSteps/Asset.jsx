@@ -6,7 +6,11 @@ import { ArrowLeftToLine, ArrowRightToLine } from "lucide-react";
 
 export const Asset = () => {
   const [state, setState] = useAppState();
-  const { handleSubmit, register } = useForm({ defaultValues: state });
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({ defaultValues: state });
   const navigate = useNavigate();
 
   const saveData = (data) => {
@@ -20,36 +24,65 @@ export const Asset = () => {
         <legend className="mb-4 font-poppins font-semibold">
           Datos del Activo de Información
         </legend>
-        <Field label="Direccion IP">
+        <Field label="Direccion IP" error={errors?.ipv4}>
           <Input
-            {...register("ipv4", { required: "Campo requerido" })}
+            {...register("ipv4", {
+              required: "Campo requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 13, message: "Maximo 10 caracteres" },
+              pattern: {
+                value: /^[0-9.-]+$/i,
+                message: "Solo numeros validos",
+              },
+            })}
+            type="text"
             id="ipv4"
             placeholder="10.6.198.1"
           />
         </Field>
-        <Field label="Puertos y Protocolos que necesita">
+        <Field
+          label="Puertos y Protocolos que necesita"
+          error={errors?.protocol}
+        >
           <Input
-            {...register("protocol")}
+            {...register("protocol", {
+              required: "Campo requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 20, message: "Maximo 20 caracteres" },
+            })}
+            type="text"
             id="protocol"
             placeholder="SAM - GESDOC - TRAKCARE"
           />
         </Field>
-        <Field label="Fecha de solicitud">
+        <Field label="Fecha de solicitud" error={errors?.dateRequest}>
           <Input
-            {...register("date-request")}
-            id="daterequest"
+            {...register("dateRequest", {
+              required: "Campo requerido",
+              minLength: { value: 8, message: "Minimo 8 caracteres" },
+              maxLength: { value: 8, message: "Maximo 8 caracteres" },
+              pattern: {
+                value: /^[0-9.-]+$/i,
+                message: "Solo numeros validos",
+              },
+            })}
+            type="text"
+            id="dateRequest"
             placeholder="01/01/2025"
           />
         </Field>
-        <Field label="Justificacion de la solicitud de VPN">
+        <Field
+          label="Justificacion de la solicitud de VPN"
+          error={errors?.vpnjustification}
+        >
           <textarea
-            {...register("vpnjustification")}
+            {...register("vpnjustification", { required: "Campo requerido" })}
             id="vpnjustification"
             placeholder="Justificación de las necesidades de conectividad desde el exterior"
             className="p-2 h-40 w-full border rounded-md resize-none"
           />
         </Field>
-        <Field label="Otras observaciones">
+        <Field label="Observaciones">
           <textarea
             {...register("observations")}
             id="observations"

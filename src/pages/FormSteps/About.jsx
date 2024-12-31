@@ -6,7 +6,11 @@ import { ArrowLeftToLine, ArrowRightToLine } from "lucide-react";
 
 export const About = () => {
   const [state, setState] = useAppState();
-  const { handleSubmit, register } = useForm({ defaultValues: state });
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({ defaultValues: state });
   const navigate = useNavigate();
 
   const saveData = (data) => {
@@ -20,60 +24,72 @@ export const About = () => {
         <legend className="mb-4 font-poppins font-semibold">
           Responsable de Autorizacion
         </legend>
-        <Field label="Nombre y Apellido">
+        <Field label="Nombre y Apellido" error={errors?.name3}>
           <Input
             {...register("name3", {
               required: "Campo requerido",
-              minLength: 6,
-              maxLength: 50,
-              pattern: /^[A-Za-z]+$/i,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+              pattern: /^[A-Za-z_ ]+$/i,
             })}
+            type="text"
             id="name3"
             placeholder="Nombre y Apellido"
           />
         </Field>
-        <Field label="R.U.T.">
+        <Field label="R.U.T." error={errors?.rut2}>
           <Input
             {...register("rut2", {
               required: "Campo requerido",
-              minLength: 6,
-              maxLength: 9,
-              pattern: /^[0-9]+$/,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 12, message: "Maximo 9 caracteres" },
+              pattern: /^[0-9.-]+$/,
             })}
+            type="text"
             id="rut2"
             placeholder="12.345.678-9"
           />
         </Field>
-        <Field label="Servicio o Departamento">
+        <Field label="Servicio o Departamento" error={errors?.department2}>
           <Input
             {...register("department2", {
               required: "Campo requerido",
-              minLength: 6,
-              maxLength: 50,
-              pattern: /^[A-Za-z]+$/i,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+              pattern: /^[A-Za-z_ ]+$/i,
             })}
+            type="text"
             id="department2"
             placeholder="Servicio"
           />
         </Field>
-        <Field label="Anexo">
+        <Field label="Anexo" error={errors?.phone3}>
           <Input
             {...register("phone3", {
               required: "Campo requerido",
-              minLength: 6,
-              maxLength: 6,
-              pattern: /^[0-9]+$/,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 6, message: "Maximo 6 caracteres" },
+              pattern: /^[0-9.-]+$/,
             })}
+            type="text"
             id="phone3"
             placeholder="123456"
           />
         </Field>
-        <Field label="Cargo">
-          <Input {...register("cargo3")} id="cargo3" placeholder="Cargo" />
-        </Field>
-        <Field label="Correo">
+        <Field label="Cargo" error={errors?.cargo3}>
           <Input
-            {...register("email3")}
+            {...register("cargo3", {
+              required: "Campo requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+            })}
+            id="cargo3"
+            placeholder="Cargo"
+          />
+        </Field>
+        <Field label="Correo" error={errors?.email3}>
+          <Input
+            {...register("email3", { required: "Campo requerido" })}
             id="email"
             placeholder="correo@hsalvador.cl"
           />

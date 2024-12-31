@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAppState } from "../../hooks/state";
 import { Button, Field, Form, Input } from "../../components/Forms";
 import { useNavigate } from "react-router-dom";
+import { ArrowRightToLine } from "lucide-react";
 
 export const Contact = () => {
   const [state, setState] = useAppState();
@@ -30,9 +31,12 @@ export const Contact = () => {
           <Input
             {...register("name", {
               required: "Campo requerido",
-              minLength: { value: 15, message: "Minimo 15 caracteres" },
-              maxLength: { value: 30, message: "Maximo 30 caracteres" },
-              pattern: /^[A-Za-z]+$/i,
+              minLength: { value: 10, message: "Minimo 15 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+              pattern: {
+                value: /^[A-Za-z_ ]+$/i,
+                message: "Solo letras validas",
+              },
             })}
             type="text"
             id="name"
@@ -44,8 +48,11 @@ export const Contact = () => {
             {...register("identification", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
-              maxLength: { value: 9, message: "Maximo 9 caracteres" },
-              pattern: { value: /^[0-9]+$/i, message: "Solo numeros validos" },
+              maxLength: { value: 12, message: "Maximo 9 caracteres" },
+              pattern: {
+                value: /^[0-9.-]+$/i,
+                message: "Solo numeros validos",
+              },
             })}
             type="text"
             id="identification"
@@ -58,7 +65,10 @@ export const Contact = () => {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 50, message: "Maximo 20 caracteres" },
-              pattern: /^[A-Za-z]+$/i,
+              pattern: {
+                value: /^[A-Za-z_ ]+$/i,
+                message: "Solo letras validas",
+              },
             })}
             type="text"
             id="department"
@@ -71,7 +81,10 @@ export const Contact = () => {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 50, message: "Maximo 20 caracteres" },
-              pattern: /^[A-Za-z]+$/i,
+              pattern: {
+                value: /^[A-Za-z_ ]+$/i,
+                message: "Solo letras validas",
+              },
             })}
             type="text"
             id="cargo"
@@ -85,8 +98,12 @@ export const Contact = () => {
               required: "Numero de Telefono requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 6, message: "Maximo 6 caracteres" },
-              pattern: { value: /^[0-9]+$/i, message: "Solo numeros validos" },
+              pattern: {
+                value: /^[0-9.-]+$/i,
+                message: "Solo numeros validos",
+              },
             })}
+            type="text"
             id="phone"
             autoComplete="off"
             placeholder="123456"
@@ -105,7 +122,7 @@ export const Contact = () => {
         </Field>
         <div className="mt-5">
           <Button variant="primary" size="large">
-            Siguiente {">"}
+            Siguiente <ArrowRightToLine size={20} />
           </Button>
         </div>
       </fieldset>

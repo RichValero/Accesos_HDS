@@ -28,10 +28,11 @@ export const Education = () => {
           <Input
             {...register("name2", {
               required: "Campo Requerido",
-              minLength: 6,
-              maxLength: 50,
-              pattern: /^[A-Za-z]+$/i,
+              minLength: { value: 6, messsage: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+              pattern: /^[A-Za-z_ ]+$/i,
             })}
+            type="text"
             id="name2"
             placeholder="Pepito Perez"
           />
@@ -40,10 +41,11 @@ export const Education = () => {
           <Input
             {...register("rut", {
               required: "Campo Requerido",
-              minLength: 6,
-              maxLength: 9,
-              pattern: /^[0-9]+$/i,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 12, message: "Maximo 9 caracteres" },
+              pattern: /^[0-9.-]+$/i,
             })}
+            type="text"
             id="rut"
             placeholder="12.345.678-9"
           />
@@ -52,10 +54,11 @@ export const Education = () => {
           <Input
             {...register("empresa", {
               required: "Campo Requerido",
-              minLength: 6,
-              maxLength: 50,
-              pattern: /^[A-Za-z]+$/i,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+              pattern: /^[A-Za-z_ ]+$/i,
             })}
+            type="text"
             id="empresa"
             placeholder="Biomedica"
           />
@@ -64,22 +67,24 @@ export const Education = () => {
           <Input
             {...register("phone2", {
               required: "Campo Requerido",
-              minLength: 6,
-              maxLength: 6,
-              pattern: /^[0-9]+$/i,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 6, message: "Maximo 6 caracteres" },
+              pattern: /^[0-9.-]+$/i,
             })}
+            type="text"
             id="phone2"
-            placeholder="+56 9 1234 5678"
+            placeholder="123456"
           />
         </Field>
         <Field label="Cargo" error={errors?.cargo2}>
           <Input
             {...register("cargo2", {
               required: "Campo Requerido",
-              minLength: 6,
-              maxLength: 50,
-              pattern: /^[A-Za-z]+$/i,
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 50 caracteres" },
+              pattern: /^[A-Za-z_ ]+$/i,
             })}
+            type="text"
             id="cargo2"
             placeholder="EU / TENS / Coordinador"
           />
