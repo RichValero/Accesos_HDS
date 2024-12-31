@@ -11,12 +11,14 @@ export const Form = ({ children, onSubmit, nextStep, ...props }) => {
 
   return (
     <form
-      className="flex flex-col justify-center items-center min-h-screen"
+      className="flex flex-col justify-center items-center min-h-screen py-5"
       onSubmit={onSubmitCustom}
       {...props}
       noValidate
     >
-      {children}
+      <div className="justify-center items-center w-4/12 bg-gray-50 shadow-lg ring-1 ring-gray-400  rounded-2xl">
+        <div className="p-5">{children}</div>
+      </div>
     </form>
   );
 };

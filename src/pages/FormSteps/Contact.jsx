@@ -22,47 +22,74 @@ export const Contact = () => {
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
-      <fieldset className="w-1/4">
+      <fieldset>
         <legend className="mb-4 font-poppins font-semibold">
           Datos del solicitante
         </legend>
         <Field label="Nombre y Apellido" error={errors?.name}>
           <Input
-            {...register("name", { required: "Campo requerido" })}
+            {...register("name", {
+              required: "Campo requerido",
+              minLength: { value: 15, message: "Minimo 15 caracteres" },
+              maxLength: { value: 30, message: "Maximo 30 caracteres" },
+              pattern: /^[A-Za-z]+$/i,
+            })}
+            type="text"
             id="name"
             placeholder="Pepito Perez"
           />
         </Field>
         <Field label="R.U.T" error={errors?.identification}>
           <Input
-            {...register("identification", { required: "Campo requerido" })}
+            {...register("identification", {
+              required: "Campo requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 9, message: "Maximo 9 caracteres" },
+              pattern: { value: /^[0-9]+$/i, message: "Solo numeros validos" },
+            })}
+            type="text"
             id="identification"
             placeholder="12.345.678-9"
           />
         </Field>
         <Field label="Servicio o Departamento" error={errors?.department}>
           <Input
-            {...register("department", { required: "Campo requerido" })}
+            {...register("department", {
+              required: "Campo requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 20 caracteres" },
+              pattern: /^[A-Za-z]+$/i,
+            })}
+            type="text"
             id="department"
             placeholder="Servicio o Departamento"
           />
         </Field>
         <Field label="Cargo" error={errors?.cargo}>
           <Input
-            {...register("cargo", { required: "Campo requerido" })}
+            {...register("cargo", {
+              required: "Campo requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 50, message: "Maximo 20 caracteres" },
+              pattern: /^[A-Za-z]+$/i,
+            })}
+            type="text"
             id="cargo"
             autoComplete="off"
-            placeholder="EU / TENS / COORDINADOR"
+            placeholder="EU / TENS / COORDINADOR(A)"
           />
         </Field>
         <Field label="Anexo" error={errors?.phone}>
           <Input
             {...register("phone", {
               required: "Numero de Telefono requerido",
+              minLength: { value: 6, message: "Minimo 6 caracteres" },
+              maxLength: { value: 6, message: "Maximo 6 caracteres" },
+              pattern: { value: /^[0-9]+$/i, message: "Solo numeros validos" },
             })}
             id="phone"
             autoComplete="off"
-            placeholder="+56 9 1234 5678"
+            placeholder="123456"
           />
         </Field>
         <Field label="Correo" error={errors?.email}>
@@ -77,7 +104,7 @@ export const Contact = () => {
           />
         </Field>
         <div className="mt-5">
-          <Button variant="primary" size="medium">
+          <Button variant="primary" size="large">
             Siguiente {">"}
           </Button>
         </div>

@@ -21,7 +21,7 @@ export const Confirm = () => {
   // SHOWING THE DATA THAT WAS ENTERED BY THE USER FOR IT TO BE CONFIRMED
   return (
     <Form onSubmit={handleSubmit(submitData)}>
-      <h1 className="mb-5 text-2xl text-bold font-poppins text-primary">
+      <h1 className="mb-5 flex justify-center items-center text-2xl text-bold font-poppins text-primary">
         Verificacion de Datos
       </h1>
       <Section title="Personal Information" url="/step">
@@ -55,7 +55,7 @@ export const Confirm = () => {
           <div>{state.email}</div>
         </SectionRow>
       </Section>
-
+      <div className="bg-slate-400 rounded-xl h-0.5 w-full mb-5" />
       {/* PERSONAL INFORMATION END */}
 
       {/* VPN INFORMATION START */}
@@ -90,7 +90,7 @@ export const Confirm = () => {
           <div>{state.email2}</div>
         </SectionRow>
       </Section>
-
+      <div className="bg-slate-400 rounded-xl h-0.5 w-full mb-5" />
       {/* VPN INFORMATION END */}
 
       {/* RESPONSABLE INFORMATION START */}
@@ -121,6 +121,7 @@ export const Confirm = () => {
           <div>{state.email3}</div>
         </SectionRow>
       </Section>
+      <div className="bg-slate-400 rounded-xl h-0.5 w-full mb-5" />
       {/* RESPONSABLE INFORMATION END */}
 
       {/*  */}
@@ -142,22 +143,26 @@ export const Confirm = () => {
         </SectionRow>
         <SectionRow>
           <div className="flex flex-col justify-center space-y-2">
-            <div>Justificacion de la solicitud de VPN</div>
-            <div className="border-2 p-2 rounded-lg">
+            <div className="mb-4">Justificacion de la solicitud de VPN</div>
+            <div className="shadow-md ring-1 ring-gray-400 p-2 rounded-lg">
               {state.vpnjustification}
             </div>
           </div>
         </SectionRow>
         <SectionRow>
           <div className="flex flex-col justify-center space-y-2">
-            <div>Otras observaciones</div>
-            <div className="border-2 p-2 rounded-lg">{state.observations}</div>
+            <div className="my-4">Otras observaciones</div>
+            <div className="shadow-md ring-1 ring-gray-400 p-2 rounded-lg">
+              {state.observations}
+            </div>
           </div>
         </SectionRow>
       </Section>
 
       <div className="flex justify-start">
-        <Button>Submit</Button>
+        <Button variant="primary" size="large">
+          Enviar
+        </Button>
       </div>
     </Form>
   );

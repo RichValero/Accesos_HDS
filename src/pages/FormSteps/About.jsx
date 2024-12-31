@@ -16,32 +16,56 @@ export const About = () => {
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
-      <fieldset className="w-1/4">
+      <fieldset>
         <legend className="mb-4 font-poppins font-semibold">
           Responsable de Autorizacion
         </legend>
         <Field label="Nombre y Apellido">
           <Input
-            {...register("name3", { required: "Campo requerido" })}
+            {...register("name3", {
+              required: "Campo requerido",
+              minLength: 6,
+              maxLength: 50,
+              pattern: /^[A-Za-z]+$/i,
+            })}
             id="name3"
             placeholder="Nombre y Apellido"
           />
         </Field>
         <Field label="R.U.T.">
-          <Input {...register("rut2")} id="rut2" placeholder="12.345.678-9" />
+          <Input
+            {...register("rut2", {
+              required: "Campo requerido",
+              minLength: 6,
+              maxLength: 9,
+              pattern: /^[0-9]+$/,
+            })}
+            id="rut2"
+            placeholder="12.345.678-9"
+          />
         </Field>
         <Field label="Servicio o Departamento">
           <Input
-            {...register("department2")}
+            {...register("department2", {
+              required: "Campo requerido",
+              minLength: 6,
+              maxLength: 50,
+              pattern: /^[A-Za-z]+$/i,
+            })}
             id="department2"
             placeholder="Servicio"
           />
         </Field>
         <Field label="Anexo">
           <Input
-            {...register("phone3")}
+            {...register("phone3", {
+              required: "Campo requerido",
+              minLength: 6,
+              maxLength: 6,
+              pattern: /^[0-9]+$/,
+            })}
             id="phone3"
-            placeholder="+56 9 1234 5678"
+            placeholder="123456"
           />
         </Field>
         <Field label="Cargo">
@@ -56,12 +80,12 @@ export const About = () => {
         </Field>
         <div className="flex justify-between w-full gap-2 mt-5">
           <Link to="/education">
-            <Button variant="primary" size="medium">
+            <Button variant="primary" size="large">
               <ArrowLeftToLine size={20} />
               Regresar
             </Button>
           </Link>
-          <Button variant="primary" size="medium">
+          <Button variant="primary" size="large">
             Siguiente <ArrowRightToLine size={20} />
           </Button>
         </div>

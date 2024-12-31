@@ -16,7 +16,7 @@ export const Asset = () => {
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
-      <fieldset className="w-1/4">
+      <fieldset>
         <legend className="mb-4 font-poppins font-semibold">
           Datos del Activo de Información
         </legend>
@@ -46,7 +46,7 @@ export const Asset = () => {
             {...register("vpnjustification")}
             id="vpnjustification"
             placeholder="Justificación de las necesidades de conectividad desde el exterior"
-            className="p-2 h-20 w-full border rounded-md"
+            className="p-2 h-40 w-full border rounded-md resize-none"
           />
         </Field>
         <Field label="Otras observaciones">
@@ -54,7 +54,7 @@ export const Asset = () => {
             {...register("observations")}
             id="observations"
             placeholder="Observaciones adicionales"
-            className="p-2 h-20 w-full border rounded-md"
+            className="p-2 h-40 w-full border rounded-md resize-none"
           />
         </Field>
 
