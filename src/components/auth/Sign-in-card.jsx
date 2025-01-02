@@ -31,7 +31,13 @@ const SignInCard = () => {
         body: JSON.stringify(formData),
       });
 
-      const token = response.data.token;
+      if (!response.ok) {
+        setError(errorData.message || "Algo no funciona, intentalo de nuevo");
+      }
+
+      const data = await response.json();
+      const token = data.token;
+
       localStorage.setItem("authToken", token);
 
       setSuccess("Inicio de sesion exitoso, redirigiendo");
