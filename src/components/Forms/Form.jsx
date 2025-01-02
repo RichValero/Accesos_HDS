@@ -17,7 +17,7 @@ export const Form = ({ children, onSubmit, nextStep, ...props }) => {
       noValidate
     >
       <div className="justify-center items-center w-4/12 bg-gray-50 shadow-lg ring-1 ring-gray-400  rounded-2xl">
-        <div className="p-5">{children}</div>
+        <div className="p-4">{children}</div>
       </div>
     </form>
   );

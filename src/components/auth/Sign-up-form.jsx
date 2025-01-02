@@ -39,7 +39,7 @@ export const SignUpForm = () => {
         setSuccess("Registro completado, redirigiendo a inicio de sesion");
         setTimeout(() => {
           navigate("/login");
-        }, 2000);
+        }, 1000);
       } else {
         setError(data.message || "Error en el registro");
       }

@@ -3,8 +3,9 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAppState } from "../../hooks/state";
 import { Button, Field, Form, Input } from "../../components/Forms";
 import { ArrowLeftToLine, ArrowRightToLine } from "lucide-react";
+import ProgressBar from "./ProgressBar";
 
-export const Asset = () => {
+export const StepFour = () => {
   const [state, setState] = useAppState();
   const {
     handleSubmit,
@@ -20,6 +21,7 @@ export const Asset = () => {
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
+      <ProgressBar />
       <fieldset>
         <legend className="mb-4 font-poppins font-semibold">
           Datos del Activo de Información
@@ -92,7 +94,7 @@ export const Asset = () => {
         </Field>
 
         <div className="flex justify-between w-full gap-2 mt-5">
-          <Link to="/education">
+          <Link to="/stepthree">
             <Button variant="primary" size="large">
               <ArrowLeftToLine size={20} />
               Regresar

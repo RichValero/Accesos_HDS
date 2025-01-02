@@ -8,6 +8,7 @@ import {
   Section,
   SectionRow,
 } from "../../components/Forms";
+import ProgressBar from "./ProgressBar";
 
 export const Confirm = () => {
   const [state] = useAppState();
@@ -21,10 +22,11 @@ export const Confirm = () => {
   // SHOWING THE DATA THAT WAS ENTERED BY THE USER FOR IT TO BE CONFIRMED
   return (
     <Form onSubmit={handleSubmit(submitData)}>
+      <ProgressBar />
       <h1 className="mb-5 flex justify-center items-center text-2xl text-bold font-poppins text-primary">
         Verificacion de Datos
       </h1>
-      <Section title="Personal Information" url="/step">
+      <Section title="Personal Information" url="/stepone">
         <SectionRow>
           <div>Nombre y Apellido: </div>
           <div>{state.name}</div>
@@ -59,7 +61,7 @@ export const Confirm = () => {
       {/* PERSONAL INFORMATION END */}
 
       {/* VPN INFORMATION START */}
-      <Section title="Datos del Usuario de la VPN" url="/education">
+      <Section title="Datos del Usuario de la VPN" url="/steptwo">
         <SectionRow>
           <div>Nombre y Apellido</div>
           <div>{state.name2}</div>
@@ -95,7 +97,7 @@ export const Confirm = () => {
 
       {/* RESPONSABLE INFORMATION START */}
 
-      <Section title="Responsable de Autorizacion" url="/about">
+      <Section title="Responsable de Autorizacion" url="/stepthree">
         <SectionRow>
           <div>Nombre y Apellido</div>
           <div>{state.name3}</div>
@@ -126,7 +128,7 @@ export const Confirm = () => {
 
       {/*  */}
 
-      <Section title="Datos del Activo de Información" url="/asset">
+      <Section title="Datos del Activo de Información" url="/stepfour">
         <SectionRow>
           <div>Direccin IP</div>
           <div>{state.ipv4}</div>

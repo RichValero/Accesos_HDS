@@ -6,22 +6,20 @@ import Footer from "./components/Footer";
 import Login from "./pages/auth/Login";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
-import VpnForm from "./pages/VpnForm";
-import { Contact } from "./pages/FormSteps/Contact";
-import { Education } from "./pages/FormSteps/Education";
-import { About } from "./pages/FormSteps/About";
+import { StepOne } from "./pages/FormSteps/Step-One";
+import { StepTwo } from "./pages/FormSteps/Step-Two";
+import { StepThree } from "./pages/FormSteps/Step-Three";
+import { StepFour } from "./pages/FormSteps/Step-Four";
 import { Confirm } from "./pages/FormSteps/Confirm";
-
 import { AppProvider } from "./hooks/state";
-import { Asset } from "./pages/FormSteps/Asset";
-import { Stepper } from "./pages/FormSteps/Stepper";
+
 export default function App() {
   return (
     <div>
       <AppProvider>
         <Router>
           <Navbar />
-          <Stepper />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -30,11 +28,10 @@ export default function App() {
             <Route path="contacts" element={<Contacts />} />
 
             {/* VPN REQUEST FORM START*/}
-            <Route path="/solicitud" element={<VpnForm />} />
-            <Route path="/step" element={<Contact />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/asset" element={<Asset />} />
+            <Route path="/stepone" element={<StepOne />} />
+            <Route path="/steptwo" element={<StepTwo />} />
+            <Route path="/stepthree" element={<StepThree />} />
+            <Route path="/stepfour" element={<StepFour />} />
             <Route path="/confirm" element={<Confirm />} />
             {/* VPN REQUEST FORM END */}
           </Routes>

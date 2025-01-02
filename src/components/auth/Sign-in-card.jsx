@@ -1,6 +1,50 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignInCard = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const token = response.data.token;
+      localStorage.setItem("authToken", token);
+
+      setSuccess("Inicio de sesion exitoso, redirigiendo");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000);
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Usuario o contraseña incorrectos"
+      );
+    }
+  };
+
   return (
     <section className="flex justify-center items-center min-h-screen">
       <div className="bg-white rounded-lg shadow-lg flex w-2/3 max-w-5xl overflow-hidden">
@@ -28,7 +72,7 @@ const SignInCard = () => {
             </h1>
           </div>
           <div className="flex justify-center">
-            <form className="flex flex-col w-full" onSubmit={() => {}}>
+            <form className="flex flex-col w-full" onSubmit={handleSubmit}>
               <div className="flex flex-col pb-2">
                 <label
                   htmlFor="email"
@@ -45,7 +89,8 @@ const SignInCard = () => {
                     required
                     placeholder="correo@hsalvador.cl"
                     autoComplete="off"
-                    onChange={() => {}}
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -65,7 +110,8 @@ const SignInCard = () => {
                     required
                     placeholder="********"
                     autoComplete="off"
-                    onChange={() => {}}
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                 </div>
               </div>

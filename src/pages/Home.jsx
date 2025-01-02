@@ -18,6 +18,7 @@ const Home = () => {
       <div className="flex flex-1 pt-10 gap-4 justify-center">
         <p className="text-primary text-xl font-semibold">Mostrar:</p>
         <button
+          type="button"
           className={`transition-all px-4 py-1 rounded-xl font-bold ${
             filter === "all"
               ? "bg-secondary text-white"
@@ -28,6 +29,7 @@ const Home = () => {
           Todas
         </button>
         <button
+          type="button"
           className={`transition-all px-4 py-1 rounded-xl font-bold ${
             filter === "admin"
               ? "bg-secondary text-white"
@@ -59,6 +61,7 @@ const Home = () => {
             <div className="flex justify-center space-x-3">
               <img
                 src={card.imgUrl}
+                alt="Logo"
                 width={60}
                 height={60}
                 className="rounded-lg"

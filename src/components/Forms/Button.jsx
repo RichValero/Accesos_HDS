@@ -12,7 +12,7 @@ export const Button = forwardRef(
 
     const variantClasses = {
       primary:
-        "bg-primary hover:bg-secondary text-white font-semibold hover:text-white hover:font-semibold transition-colors duration-500 flex gap-2 items-center",
+        "bg-sky-500 hover:bg-sky-700 text-white font-semibold hover:text-white hover:font-semibold transition-colors duration-500 flex gap-2 items-center",
       secondary: "bg-secondary",
       success: "bg-success", //OPTIONAL
       danger: "bg-danger", //OPTIONAL

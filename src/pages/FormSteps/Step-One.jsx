@@ -4,8 +4,9 @@ import { useAppState } from "../../hooks/state";
 import { Button, Field, Form, Input } from "../../components/Forms";
 import { useNavigate } from "react-router-dom";
 import { ArrowRightToLine } from "lucide-react";
+import ProgressBar from "./ProgressBar";
 
-export const Contact = () => {
+export const StepOne = () => {
   const [state, setState] = useAppState();
   const {
     handleSubmit,
@@ -18,15 +19,16 @@ export const Contact = () => {
 
   const saveData = (data) => {
     setState({ ...state, ...data });
-    navigate("/education");
+    navigate("/steptwo");
   };
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
+      <ProgressBar />
+      <h1 className="flex justify-center items-center mb-4 font-poppins font-semibold text-xl">
+        Datos del solicitante
+      </h1>
       <fieldset>
-        <legend className="mb-4 font-poppins font-semibold">
-          Datos del solicitante
-        </legend>
         <Field label="Nombre y Apellido" error={errors?.name}>
           <Input
             {...register("name", {
