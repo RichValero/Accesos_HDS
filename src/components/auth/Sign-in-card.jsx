@@ -53,10 +53,10 @@ const SignInCard = () => {
 
   return (
     <section className="flex justify-center items-center min-h-screen">
-      <div className="bg-white rounded-lg shadow-lg flex w-2/3 max-w-5xl overflow-hidden">
-        <div className="w-1/2 bg-primary text-white p-8 flex flex-col">
+      <div className="bg-white rounded-lg shadow-lg flex w-1/10 max-w-5xl overflow-hidden">
+        <div className="w-1/3 bg-primary text-white p-8 flex flex-col items-center">
           <div className="flex flex-col justify-center items-center space-y-2.5">
-            <h2 className="text-4xl font-bold font-poppins">Bienvenido</h2>
+            <h2 className="text-4xl font-bold ">BIENVENIDO</h2>
             <h3 className="text-lg mb-10 font-semibold font-poppins">
               Inicio de sesion a portal de informatica.
             </h3>
@@ -66,19 +66,19 @@ const SignInCard = () => {
             informatica.
           </p>
         </div>
-        <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 rounded-lg drop-shadow-lg ">
-          <div className="flex flex-row justify-center items-center mb-10 ">
-            <img
-              src="./assets/hds.png"
-              alt="logo"
-              className="w-10 h-10 object-contain mx-3"
-            />
-            <h1 className="font-bold text-xl text-primary">
-              HOSPITAL DEL SALVADOR
-            </h1>
-          </div>
+        <div className="flex flex-col md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 rounded-lg">
           <div className="flex justify-center">
             <form className="flex flex-col w-full" onSubmit={handleSubmit}>
+              <div className="flex items-center mb-10 pl-10">
+                <img
+                  src="./assets/hds.png"
+                  alt="logo"
+                  className="w-10 h-10 object-contain mx-3"
+                />
+                <h1 className="items-center font-semibold text-2xl">
+                  HOSPITAL DEL SALVADOR
+                </h1>
+              </div>
               <div className="flex flex-col pb-2">
                 <label
                   htmlFor="email"
@@ -91,7 +91,7 @@ const SignInCard = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="px-3 border-2 border-gray-500 rounded-md h-10 mx-auto mb-3  w-full"
+                    className="px-3 ring-1 ring-gray-400  h-10 rounded-md mx-auto mb-3  w-full"
                     required
                     placeholder="correo@hsalvador.cl"
                     autoComplete="off"
@@ -112,7 +112,7 @@ const SignInCard = () => {
                     type="password"
                     id="password"
                     name="password"
-                    className="px-3 border-2 border-gray-500 rounded-md h-10 mb-4 w-full text-slate-700 "
+                    className="px-3 ring-1 ring-gray-400  rounded-md h-10 mb-4 w-full text-slate-700 "
                     required
                     placeholder="********"
                     autoComplete="off"
