@@ -29,9 +29,9 @@ export const StepOne = () => {
         Datos del solicitante
       </h1>
       <fieldset>
-        <Field label="Nombre y Apellido" error={errors?.name}>
+        <Field label="Nombre y Apellido" error={errors?.fullname}>
           <Input
-            {...register("name", {
+            {...register("fullname", {
               required: "Campo requerido",
               minLength: { value: 10, message: "Minimo 15 caracteres" },
               maxLength: { value: 50, message: "Maximo 50 caracteres" },
@@ -41,13 +41,13 @@ export const StepOne = () => {
               },
             })}
             type="text"
-            id="name"
+            id="fullname"
             placeholder="Pepito Perez"
           />
         </Field>
-        <Field label="R.U.T" error={errors?.identification}>
+        <Field label="R.U.T" error={errors?.rut}>
           <Input
-            {...register("identification", {
+            {...register("rut", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 12, message: "Maximo 9 caracteres" },
@@ -57,7 +57,7 @@ export const StepOne = () => {
               },
             })}
             type="text"
-            id="identification"
+            id="rut"
             placeholder="12.345.678-9"
           />
         </Field>

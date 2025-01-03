@@ -42,24 +42,21 @@ export const StepFour = () => {
             placeholder="10.6.198.1"
           />
         </Field>
-        <Field
-          label="Puertos y Protocolos que necesita"
-          error={errors?.protocol}
-        >
+        <Field label="Puertos y Protocolos que necesita" error={errors?.ports}>
           <Input
-            {...register("protocol", {
+            {...register("ports", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 20, message: "Maximo 20 caracteres" },
             })}
             type="text"
-            id="protocol"
+            id="ports"
             placeholder="SAM - GESDOC - TRAKCARE"
           />
         </Field>
-        <Field label="Fecha de solicitud" error={errors?.dateRequest}>
+        <Field label="Fecha de solicitud" error={errors?.date_time}>
           <Input
-            {...register("dateRequest", {
+            {...register("date_time", {
               required: "Campo requerido",
               minLength: { value: 8, message: "Minimo 8 caracteres" },
               maxLength: { value: 8, message: "Maximo 8 caracteres" },
@@ -69,17 +66,17 @@ export const StepFour = () => {
               },
             })}
             type="text"
-            id="dateRequest"
+            id="date_time"
             placeholder="01/01/2025"
           />
         </Field>
         <Field
           label="Justificacion de la solicitud de VPN"
-          error={errors?.vpnjustification}
+          error={errors?.justif}
         >
           <textarea
-            {...register("vpnjustification", { required: "Campo requerido" })}
-            id="vpnjustification"
+            {...register("justif", { required: "Campo requerido" })}
+            id="justif"
             placeholder="Justificación de las necesidades de conectividad desde el exterior"
             className="p-2 h-40 w-full border rounded-md resize-none"
           />

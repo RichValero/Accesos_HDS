@@ -2,13 +2,16 @@ import { Ellipsis, OctagonX, Plus, UserPen } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import "@fontsource/poppins";
+import { SideBar } from "../components/SideBar";
+import { Button } from "../components/Forms/Button";
 
 const Dashboard = () => {
   return (
-    <section>
-      <div className="w-full px-10 mx-auto bg-white">
-        {/* DASHBOARD NAVBAR */}
-        <div className="flex justify-end items-center w-full mt-10 mb-3 mx-auto">
+    <section className="flex gap-5">
+      <SideBar />
+      <div className="w-full px-10 pt-5">
+        {/* DASHBOARD NAVBAR START*/}
+        {/* <div className="flex justify-end items-center w-full mt-10 mb-3 mx-auto">
           <Link to="/register">
             <button
               type="button"
@@ -18,31 +21,36 @@ const Dashboard = () => {
               Agregar Usuario
             </button>
           </Link>
-        </div>
+        </div> */}
+        {/* DASHBOARD NAVBAR END  */}
+
         {/* DASHBOARD CONTENT */}
-        <div className="flex flex-col shadow-xl border border-slate-300 shadow-slate-300 min-h-screen rounded-xl mb-10">
-          <div className="flex justify-center items-center gap-10 mt-5">
-            <p className="font-semibold text-lg font-poppins">Usuarios</p>
-            <p className="font-semibold text-lg font-poppins">
-              Solicitudes Activas
-            </p>
-            <p className="font-semibold text-lg font-poppins">
-              Solicitudes Pendientes
-            </p>
-          </div>
-          <div className="h-10 mt-5 ">
+        <Button variant="dashboard" size="dashboard">
+          Usuarios
+        </Button>
+        <Button variant="dashboard" size="dashboard">
+          Todas las solicitudes
+        </Button>
+        <Button variant="dashboard" size="dashboard">
+          Activas
+        </Button>
+        <Button variant="dashboard" size="dashboard">
+          Pendientes
+        </Button>
+        <div className="flex flex-col shadow-xl h-screen mb-10 bg-white">
+          <div className="">
             <div className="flex flex-1 justify-evenly items-center">
               <table className="table-auto w-full text-center font-poppins ">
                 <thead>
                   <tr className="font-semibold">
-                    <td className="py-1 border text-center  p-4">ID</td>
-                    <td className="py-1 border text-center  p-4">Nombre</td>
-                    <td className="py-1 border text-center  p-4">Correo</td>
-                    <td className="py-1 border text-center  p-4">
+                    <th className="py-1 border text-center  p-4">ID</th>
+                    <th className="py-1 border text-center  p-4">Nombre</th>
+                    <th className="py-1 border text-center  p-4">Correo</th>
+                    <th className="py-1 border text-center  p-4">
                       Departamento
-                    </td>
-                    <td className="py-1 border text-center  p-4">Estado</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
+                    </th>
+                    <th className="py-1 border text-center  p-4">Estado</th>
+                    <th className="py-1 border text-center  p-4">Accion</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -63,146 +71,6 @@ const Dashboard = () => {
                         <Ellipsis size={24} strokeWidth={3} color="#000000" />
                       </button>
                     </td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion </td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 border text-center  p-4">01</td>
-                    <td className="py-1 border text-center  p-4">
-                      Cynthia Soto
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      csoto@hsalvador.cl
-                    </td>
-                    <td className="py-1 border text-center  p-4">
-                      Informatica
-                    </td>
-                    <td className="py-1 border text-center  p-4">Activo</td>
-                    <td className="py-1 border text-center  p-4">Accion</td>
                   </tr>
                 </tbody>
               </table>

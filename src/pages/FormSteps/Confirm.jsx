@@ -9,14 +9,36 @@ import {
   SectionRow,
 } from "../../components/Forms";
 import ProgressBar from "./ProgressBar";
+import { useState } from "react";
 
 export const Confirm = () => {
   const [state] = useAppState();
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   const { handleSubmit } = useForm({ defaultValues: state });
 
-  const submitData = (data) => {
-    console.info(data);
-    //SUBMIT DATA TO DATABASE
+  const submitData = async () => {
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await fetch("http://localhost:5000/form-data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setSuccess("Registro completado, redirigiendo a inicio de sesion");
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
+      } else {
+        setError(data.message || "Error en el registro");
+      }
+    } catch (err) {}
+    setError("Algo no funciona, intentalo de nuevo");
   };
 
   // SHOWING THE DATA THAT WAS ENTERED BY THE USER FOR IT TO BE CONFIRMED
@@ -26,15 +48,15 @@ export const Confirm = () => {
       <h1 className="mb-5 flex justify-center items-center text-2xl text-bold font-poppins text-primary">
         Verificacion de Datos
       </h1>
-      <Section title="Personal Information" url="/stepone">
+      <Section title="Datos del Solicitante" url="/stepone">
         <SectionRow>
           <div>Nombre y Apellido: </div>
-          <div>{state.name}</div>
+          <div>{state.fullname}</div>
         </SectionRow>
 
         <SectionRow>
           <div>R.U.T: </div>
-          <div>{state.identification}</div>
+          <div>{state.rut}</div>
         </SectionRow>
 
         <SectionRow>
@@ -64,32 +86,32 @@ export const Confirm = () => {
       <Section title="Datos del Usuario de la VPN" url="/steptwo">
         <SectionRow>
           <div>Nombre y Apellido</div>
-          <div>{state.name2}</div>
+          <div>{state.fullname_2}</div>
         </SectionRow>
 
         <SectionRow>
           <div>R.U.T.</div>
-          <div>{state.rut}</div>
+          <div>{state.rut_2}</div>
         </SectionRow>
 
         <SectionRow>
           <div>Empresa o Establecimiento</div>
-          <div>{state.empresa}</div>
+          <div>{state.department_2}</div>
         </SectionRow>
 
         <SectionRow>
           <div>Anexo</div>
-          <div>{state.phone2}</div>
+          <div>{state.phone_2}</div>
         </SectionRow>
 
         <SectionRow>
           <div>Cargo</div>
-          <div>{state.cargo2}</div>
+          <div>{state.cargo_2}</div>
         </SectionRow>
 
         <SectionRow>
           <div>Correo</div>
-          <div>{state.email2}</div>
+          <div>{state.email_2}</div>
         </SectionRow>
       </Section>
       <div className="bg-slate-400 rounded-xl h-0.5 w-full mb-5" />
@@ -100,27 +122,27 @@ export const Confirm = () => {
       <Section title="Responsable de Autorizacion" url="/stepthree">
         <SectionRow>
           <div>Nombre y Apellido</div>
-          <div>{state.name3}</div>
+          <div>{state.fullname_3}</div>
         </SectionRow>
         <SectionRow>
           <div>R.U.T.</div>
-          <div>{state.rut2}</div>
+          <div>{state.rut_3}</div>
         </SectionRow>
         <SectionRow>
           <div>Servicio o Departamento</div>
-          <div>{state.department2}</div>
+          <div>{state.department_3}</div>
         </SectionRow>
         <SectionRow>
           <div>Anexo</div>
-          <div>{state.phone3}</div>
+          <div>{state.phone_3}</div>
         </SectionRow>
         <SectionRow>
           <div>Cargo</div>
-          <div>{state.cargo3}</div>
+          <div>{state.cargo_3}</div>
         </SectionRow>
         <SectionRow>
           <div>Correo</div>
-          <div>{state.email3}</div>
+          <div>{state.email_3}</div>
         </SectionRow>
       </Section>
       <div className="bg-slate-400 rounded-xl h-0.5 w-full mb-5" />
@@ -135,19 +157,19 @@ export const Confirm = () => {
         </SectionRow>
         <SectionRow>
           <div>Puertos y Protocolos</div>
-          <div>{state.protocol}</div>
+          <div>{state.ports}</div>
         </SectionRow>
         <SectionRow>
           <div className=" rounded-md w-full">
             <div>Fecha de solicitud:</div>
-            <div>{state.daterequest}</div>
+            <div>{state.date_time}</div>
           </div>
         </SectionRow>
         <SectionRow>
           <div className="flex flex-col justify-center space-y-2">
             <div className="mb-4">Justificacion de la solicitud de VPN</div>
             <div className="shadow-md ring-1 ring-gray-400 p-2 rounded-lg">
-              {state.vpnjustification}
+              {state.justif}
             </div>
           </div>
         </SectionRow>

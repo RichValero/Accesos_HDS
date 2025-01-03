@@ -15,6 +15,8 @@ export const Button = forwardRef(
         "bg-sky-500 hover:bg-sky-700 text-white font-semibold hover:text-white hover:font-semibold transition-colors duration-500 flex gap-2 items-center",
       secondary: "bg-secondary",
       success: "bg-success", //OPTIONAL
+      dashboard:
+        "bg-white text-primary font-semibold ring-1 ring-slate-900/5 hover:bg-slate-500/5", //OPTIONAL
       danger: "bg-danger", //OPTIONAL
       warning: "bg-warning", //OPTIONAL
       info: "bg-info", //OPTIONAL
@@ -26,6 +28,7 @@ export const Button = forwardRef(
       small: "px-2 py-1 mb-2 text-sm rounded-xl",
       medium: "px-4 py-2 mb-4 text-md rounded-3xl",
       large: "px-6 py-3 mb-6 text-lg rounded-3xl",
+      dashboard: "px-10 py-2 text-md rounded-tr-xl rounded-tl-xl ",
     };
 
     // const baseClasses = `rounded font-medium transition-all duration-200 ${}` IN CASE DISABLE IS NEEDED

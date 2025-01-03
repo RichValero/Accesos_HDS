@@ -26,73 +26,73 @@ export const StepThree = () => {
         <legend className="mb-4 font-poppins font-semibold">
           Responsable de Autorizacion
         </legend>
-        <Field label="Nombre y Apellido" error={errors?.name3}>
+        <Field label="Nombre y Apellido" error={errors?.fullname_3}>
           <Input
-            {...register("name3", {
+            {...register("fullname_3", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 50, message: "Maximo 50 caracteres" },
               pattern: /^[A-Za-z_ ]+$/i,
             })}
             type="text"
-            id="name3"
+            id="fullname_3"
             placeholder="Nombre y Apellido"
           />
         </Field>
-        <Field label="R.U.T." error={errors?.rut2}>
+        <Field label="R.U.T." error={errors?.rut_3}>
           <Input
-            {...register("rut2", {
+            {...register("rut_3", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 12, message: "Maximo 9 caracteres" },
               pattern: /^[0-9.-]+$/,
             })}
             type="text"
-            id="rut2"
+            id="rut_3"
             placeholder="12.345.678-9"
           />
         </Field>
-        <Field label="Servicio o Departamento" error={errors?.department2}>
+        <Field label="Servicio o Departamento" error={errors?.department_3}>
           <Input
-            {...register("department2", {
+            {...register("department_3", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 50, message: "Maximo 50 caracteres" },
               pattern: /^[A-Za-z_ ]+$/i,
             })}
             type="text"
-            id="department2"
+            id="department_3"
             placeholder="Servicio"
           />
         </Field>
-        <Field label="Anexo" error={errors?.phone3}>
+        <Field label="Anexo" error={errors?.phone_3}>
           <Input
-            {...register("phone3", {
+            {...register("phone_3", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 6, message: "Maximo 6 caracteres" },
               pattern: /^[0-9.-]+$/,
             })}
             type="text"
-            id="phone3"
+            id="phone_3"
             placeholder="123456"
           />
         </Field>
-        <Field label="Cargo" error={errors?.cargo3}>
+        <Field label="Cargo" error={errors?.cargo_3}>
           <Input
-            {...register("cargo3", {
+            {...register("cargo_3", {
               required: "Campo requerido",
               minLength: { value: 6, message: "Minimo 6 caracteres" },
               maxLength: { value: 50, message: "Maximo 50 caracteres" },
             })}
-            id="cargo3"
+            id="cargo_3"
             placeholder="Cargo"
           />
         </Field>
-        <Field label="Correo" error={errors?.email3}>
+        <Field label="Correo" error={errors?.email_3}>
           <Input
-            {...register("email3", { required: "Campo requerido" })}
-            id="email"
+            {...register("email_3", { required: "Campo requerido" })}
+            id="email_3"
             placeholder="correo@hsalvador.cl"
           />
         </Field>
