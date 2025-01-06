@@ -10,14 +10,16 @@ import {
 } from "../../components/Forms";
 import ProgressBar from "./ProgressBar";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Confirm = () => {
   const [state] = useAppState();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const { handleSubmit } = useForm({ defaultValues: state });
+  const navigate = useNavigate();
 
-  const submitData = async () => {
+  const submitData = async (data) => {
     setError("");
     setSuccess("");
 
@@ -25,17 +27,18 @@ export const Confirm = () => {
       const response = await fetch("http://localhost:5000/form-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(),
+        body: JSON.stringify(data),
       });
 
-      const data = await response.json();
+      const responseData = await response.json();
+
       if (response.ok) {
         setSuccess("Registro completado, redirigiendo a inicio de sesion");
         setTimeout(() => {
-          navigate("/login");
+          navigate("/dashboard");
         }, 1000);
       } else {
-        setError(data.message || "Error en el registro");
+        setError(responseData.message || "Error en el registro");
       }
     } catch (err) {}
     setError("Algo no funciona, intentalo de nuevo");
