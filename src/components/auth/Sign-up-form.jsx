@@ -5,6 +5,7 @@ export const SignUpForm = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
+    department: "",
     email: "",
     password: "",
     role: "user",
@@ -95,6 +96,27 @@ export const SignUpForm = () => {
                 id="lastname"
                 className="mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4"
                 placeholder="Apellido"
+                autoComplete="off"
+                required
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="pb-2">
+            <label
+              htmlFor="department"
+              className="block mb-2 text-sm font-medium text-[#111827]"
+            >
+              Departamento
+            </label>
+            <div className="relative text-gray-400">
+              <input
+                value={formData.department}
+                type="text"
+                name="department"
+                id="department"
+                className="mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4"
+                placeholder="Departamento de Informatica"
                 autoComplete="off"
                 required
                 onChange={handleChange}

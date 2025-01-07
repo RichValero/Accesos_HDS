@@ -25,3 +25,11 @@ body {
 .inputformat {
   @apply mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block p-2.5 py-3 px-4;
 }
+
+.tablerow {
+  @apply border text-center p-4 capitalize border-hidden font-sans font-semibold text-base;
+}
+
+.tablerow-nonecapitalize {
+  @apply border text-center p-4 border-hidden font-sans font-semibold text-base;
+}
