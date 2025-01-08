@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SideBar } from "../SideBar";
 
 export const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -50,14 +51,15 @@ export const SignUpForm = () => {
   };
 
   return (
-    <section className="flex justify-center items-center min-h-screen">
-      <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-xl">
+    <section className="flex items-center h-screen">
+      <SideBar />
+      <div className="flex flex-col md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-xl">
         <div className="flex justify-center items-center text-xl mb-5">
           {/* {error && <p style={{ color: "red" }}>{error}</p>}
           {success && <p style={{ color: "green" }}>{success}</p>} */}
         </div>
         <div className="flex flex-row gap-3 pb-4 justify-center">
-          <h1 className="text-3xl font-bold text-[#191F34] my-auto">
+          <h1 className="text-3xl font-bold text-[#191F34]">
             Registrar Usuario
           </h1>
         </div>
