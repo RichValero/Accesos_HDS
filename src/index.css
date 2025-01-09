@@ -27,9 +27,5 @@ body {
 }
 
 .tablerow {
-  @apply border text-center p-4 capitalize border-hidden font-sans font-semibold text-base;
-}
-
-.tablerow-nonecapitalize {
-  @apply border text-center p-4 border-hidden font-sans font-semibold text-base;
+  @apply text-center p-4 border-hidden font-sans font-semibold text-base;
 }

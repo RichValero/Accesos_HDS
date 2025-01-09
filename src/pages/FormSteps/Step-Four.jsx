@@ -54,7 +54,7 @@ export const StepFour = () => {
             placeholder="SAM - GESDOC - TRAKCARE"
           />
         </Field>
-        <Field label="Fecha de solicitud" error={errors?.date_time}>
+        {/* <Field label="Fecha de solicitud" error={errors?.date_time}>
           <Input
             {...register("date_time", {
               required: "Campo requerido",
@@ -69,7 +69,7 @@ export const StepFour = () => {
             id="date_time"
             placeholder="01/01/2025"
           />
-        </Field>
+        </Field> */}
         <Field
           label="Justificacion de la solicitud de VPN"
           error={errors?.justif}

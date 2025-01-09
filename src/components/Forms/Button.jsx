@@ -16,7 +16,7 @@ export const Button = forwardRef(
       secondary: "bg-secondary",
       success: "bg-success", //OPTIONAL
       dashboard:
-        "bg-white text-primary font-semibold ring-1 ring-slate-900/5 hover:bg-slate-500/5", //OPTIONAL
+        "bg-white text-primary font-semibold ring-1 ring-slate-200 hover:bg-slate-300", //OPTIONAL
       danger: "bg-danger", //OPTIONAL
       warning: "bg-warning", //OPTIONAL
       info: "bg-info", //OPTIONAL

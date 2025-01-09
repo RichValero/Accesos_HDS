@@ -93,9 +93,9 @@ export const StepTwo = () => {
         </Field>
         <Field label="Correo" error={errors?.email_2}>
           <Input
-            {...register("email2", { required: "Campo Requerido" })}
+            {...register("email_2", { required: "Campo Requerido" })}
             type="email"
-            id="email2"
+            id="email_2"
             placeholder="correo@hsalvador.cl"
           />
         </Field>
