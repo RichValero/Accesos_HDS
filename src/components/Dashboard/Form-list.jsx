@@ -77,19 +77,17 @@ export const FormList = () => {
                   >
                     <td className="tablerow">{row.id}</td>
                     <td className="tablerow">{row.fullname}</td>
-                    <td className="tablerow-none-capitalize w-1/5">
-                      {row.email}
-                    </td>
+                    <td className="tablerow">{row.email}</td>
                     <td className="tablerow w-1/4">{row.department}</td>
                     <td className="tablerow">{row.date_time}</td>
                     <td className="tablerow bg-green-500">Activo</td>
                     <td className="tablerow w-1/6">Editar - Eliminar - Ver</td>
                   </tr>
                   {expandedRow.has(row.id) && (
-                    <tr>
-                      <td colSpan="4" className="p-10">
-                        <div className="grid grid-cols-4 gap-x-8 gap-y-4">
-                          <div className="w-full">
+                    <tr key={row.id} className="border-b border-gray-300 ">
+                      <td colSpan="6" className="p-10">
+                        <div className="grid grid-cols-4 gap-x-8 gap-y-4 ">
+                          <div>
                             <h3 className="font-medium text-gray-900">
                               Datos del Usuario de la VPN
                             </h3>
@@ -177,44 +175,45 @@ export const FormList = () => {
                           </div>
                           <div>
                             <h3 className="font-medium text-gray-900">
-                              Responsable de Autorizacion
+                              Datos del Activo de Información
                             </h3>
                             <dl className="mt-2 text-sm">
                               <div className="mt-1">
                                 <dt className="font-medium text-gray-600">
-                                  Nombre Completo
+                                  Direccion IP
                                 </dt>
-                                <dd className="mt-1">{row.fullname_3}</dd>
+                                <dd className="mt-1">{row.ipv4}</dd>
                               </div>
                               <div className="mt-1">
                                 <dt className="font-medium text-gray-600">
-                                  R.U.T.:
+                                  Puertos y Protocolos
                                 </dt>
-                                <dd className="mt-1">{row.rut_3}</dd>
+                                <dd className="mt-1">{row.ports}</dd>
                               </div>
                               <div className="mt-1">
                                 <dt className="font-medium text-gray-600">
-                                  Departamento
+                                  Fecha
                                 </dt>
-                                <dd className="mt-1">{row.department_3}</dd>
+                                <dd className="mt-1">{row.date_time}</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div>
+                            <h3 className="font-medium text-gray-900">
+                              Datos del Activo de Información
+                            </h3>
+                            <dl className="mt-1 text-sm">
+                              <div className="mt-1">
+                                <dt className="font-medium text-gray-600">
+                                  Justificacion de Solicitud
+                                </dt>
+                                <dd className="mt-1">{row.justif}</dd>
                               </div>
                               <div className="mt-1">
                                 <dt className="font-medium text-gray-600">
-                                  Anexo
+                                  Observaciones
                                 </dt>
-                                <dd className="mt-1">{row.phone_3}</dd>
-                              </div>
-                              <div className="mt-1">
-                                <dt className="font-medium text-gray-600">
-                                  Cargo
-                                </dt>
-                                <dd className="mt-1">{row.cargo_3}</dd>
-                              </div>
-                              <div className="mt-1">
-                                <dt className="font-medium text-gray-600">
-                                  Correo
-                                </dt>
-                                <dd className="mt-1">{row.email_3}</dd>
+                                <dd className="mt-1">{row.observations}</dd>
                               </div>
                             </dl>
                           </div>
