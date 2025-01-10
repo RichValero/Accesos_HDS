@@ -27,5 +27,5 @@ body {
 }
 
 .tablerow {
-  @apply text-center p-4 border-hidden font-sans font-semibold text-base;
+  @apply text-center p-4 border-hidden font-montserrat font-medium text-base;
 }

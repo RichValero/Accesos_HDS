@@ -13,7 +13,7 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="flex gap-5">
+    <section className="flex gap-5 h-screen">
       <SideBar />
       <div className="w-full px-10 py-5">
         <Button

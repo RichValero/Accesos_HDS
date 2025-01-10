@@ -19,7 +19,6 @@ export default function App() {
       <AppProvider>
         <Router>
           <Navbar />
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

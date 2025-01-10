@@ -68,31 +68,33 @@ export const FormList = () => {
   //HANDLING ERROR - END
 
   return (
-    <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg h-screen bg-white">
-      <table className="min-w-full divide-y divide-gray-300 even:bg-gray-50 odd:bg-white">
-        <thead className="bg-gray-50">
-          <tr className="bg-primary text-white text-center">
-            <th className="py-1 border p-4">ID</th>
-            <th className="py-1 border p-4">Nombre</th>
-            <th className="py-1 border p-4">Correo</th>
-            <th className="py-1 border p-4">Departamento</th>
-            <th className="py-1 border p-4">Fecha</th>
-            <th className="py-1 border p-4">Estado</th>
-            <th className="py-1 border p-4">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forms.map((row) => (
-            <TableRow
-              key={row.id}
-              row={row}
-              isExpanded={expandedRow.has(row.id)}
-              onToggleExpand={handleToggleExpand}
-              isLoading={isLoading}
-            />
-          ))}
-        </tbody>
-      </table>
+    <div className="h-screen relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg bg-white">
+      <div className="overflow-auto h-full">
+        <table className="min-w-full divide-y divide-gray-300 even:bg-gray-50 odd:bg-white">
+          <thead className="bg-gray-50 sticky top-0 z-10">
+            <tr className="bg-primary text-white text-center">
+              <th className="py-1 border p-4">ID</th>
+              <th className="py-1 border p-4">Nombre</th>
+              <th className="py-1 border p-4">Correo</th>
+              <th className="py-1 border p-4">Departamento</th>
+              <th className="py-1 border p-4">Fecha</th>
+              <th className="py-1 border p-4">Estado</th>
+              <th className="py-1 border p-4">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {forms.map((row) => (
+              <TableRow
+                key={row.id}
+                row={row}
+                isExpanded={expandedRow.has(row.id)}
+                onToggleExpand={handleToggleExpand}
+                isLoading={isLoading}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
