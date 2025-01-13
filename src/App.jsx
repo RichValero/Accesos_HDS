@@ -27,7 +27,7 @@ export default function App() {
             <Route path="contacts" element={<Contacts />} />
 
             {/* VPN REQUEST FORM START*/}
-            <Route path="/stepone" element={<FormOne />} />
+            <Route path="/stepone" element={<StepOne />} />
             <Route path="/steptwo" element={<StepTwo />} />
             <Route path="/stepthree" element={<StepThree />} />
             <Route path="/stepfour" element={<StepFour />} />

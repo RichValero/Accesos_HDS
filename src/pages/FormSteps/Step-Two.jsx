@@ -98,6 +98,17 @@ export const StepTwo = () => {
             placeholder="correo@hsalvador.cl"
           />
         </Field>
+        <div className="flex justify-between w-full gap-2 mt-5">
+          <Link to="/steptwo">
+            <Button variant="primary" size="large">
+              <ArrowLeftToLine size={20} />
+              Regresar
+            </Button>
+          </Link>
+          <Button variant="primary" size="large">
+            Siguiente <ArrowRightToLine size={20} />
+          </Button>
+        </div>
       </fieldset>
     </Form>
   );

@@ -120,6 +120,9 @@ export const StepOne = () => {
             placeholder="correo@hsalvador.cl"
           />
         </Field>
+        <Button variant="primary" size="large">
+          Siguiente <ArrowRightToLine size={20} />
+        </Button>
       </fieldset>
     </Form>
   );
