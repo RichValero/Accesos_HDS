@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-export const UsersList = () => {
+export const UsersTable = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -26,8 +26,8 @@ export const UsersList = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-xl h-screen bg-white">
-      <table className="min-w-full divide-y divide-gray-300 even:bg-gray-50 odd:bg-white">
+    <div className="container shadow ring-1 ring-black ring-opacity-5 bg-white">
+      <table className="w-full divide-y divide-gray-300 even:bg-gray-50 odd:bg-white">
         <thead>
           <tr className="bg-primary text-white text-center">
             <th className="py-1 border p-4">ID</th>

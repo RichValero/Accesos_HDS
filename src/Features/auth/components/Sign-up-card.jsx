@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SideBar } from "../SideBar";
+import { SideBar } from "../../../components/Layout";
 
 export const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -51,7 +51,7 @@ export const SignUpForm = () => {
   };
 
   return (
-    <section className="flex items-center h-screen">
+    <section className="flex items-center min-h-screen">
       <SideBar />
       <div className="flex flex-col md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-xl">
         <div className="flex justify-center items-center text-xl mb-5">

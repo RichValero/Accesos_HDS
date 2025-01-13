@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export const SideBar = () => {
   return (
-    <div className=" w-1/6">
-      <div className="flex flex-col pt-10 items-center h-screen bg-white shadow-lg rounded-md space-y-5">
+    <div className="">
+      <div className="flex flex-col pt-10 items-center min-h-screen space-y-5 bg-white rounded-xl shadow-lg">
         <div
           className="flex items-center gap-10 hover:bg-slate-200 hover:rounded-md 
         hover:cursor-pointer hover:transition-colors duration-500 hover:px-2 hover:py-1"

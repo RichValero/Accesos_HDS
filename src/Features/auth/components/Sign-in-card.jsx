@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignInCard = () => {
+export const SignInCard = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -140,5 +140,3 @@ const SignInCard = () => {
     </section>
   );
 };
-
-export default SignInCard;

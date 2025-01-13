@@ -23,13 +23,13 @@ export const TableRow = ({ row, isExpanded, onToggleExpand, isLoading }) => {
           <Pencil
             strokeWidth={2}
             color="#ededed"
-            className="bg-green-600 rounded-xl p-1 cursor-pointer hover:bg-green-900"
+            className="rounded-xl p-1 cursor-pointer hover:bg-green-900 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-800  to-sky-600 "
             size={30}
           />
           <Trash2
             strokeWidth={2}
             color="#ededed"
-            className="bg-red-600 rounded-xl p-1 cursor-pointer hover:bg-red-900"
+            className="bg-red-600 rounded-xl p-1 cursor-pointer hover:bg-red-900 shadow-md shadow-red-300"
             size={30}
           />
           <Eye

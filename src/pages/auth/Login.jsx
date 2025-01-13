@@ -1,5 +1,5 @@
 import React from "react";
-import SignInCard from "../../components/auth/Sign-in-card";
+import { SignInCard } from "../../Features/auth/components";
 
 const Login = () => {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { SideBar } from "../SideBar";
-import { Button } from "../Forms/index";
+import { Button } from "../../../components/Forms/index";
 import { Loader2 } from "lucide-react";
-import { TableRow } from "../Table/TableRow";
-export const FormList = () => {
+import { TableRow } from "../../../components/Table/TableRow";
+export const FormTable = () => {
   const [forms, setForms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);

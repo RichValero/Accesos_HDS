@@ -1,8 +1,7 @@
-import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Navbar, Footer } from "./components/Layout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
 import Login from "./pages/auth/Login";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
@@ -12,6 +11,7 @@ import { StepThree } from "./pages/FormSteps/Step-Three";
 import { StepFour } from "./pages/FormSteps/Step-Four";
 import { Confirm } from "./pages/FormSteps/Confirm";
 import { AppProvider } from "./hooks/state";
+import FormOne from "./pages/FormSteps/FormOne";
 
 export default function App() {
   return (
@@ -27,7 +27,7 @@ export default function App() {
             <Route path="contacts" element={<Contacts />} />
 
             {/* VPN REQUEST FORM START*/}
-            <Route path="/stepone" element={<StepOne />} />
+            <Route path="/stepone" element={<FormOne />} />
             <Route path="/steptwo" element={<StepTwo />} />
             <Route path="/stepthree" element={<StepThree />} />
             <Route path="/stepfour" element={<StepFour />} />

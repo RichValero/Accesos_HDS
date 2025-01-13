@@ -21,9 +21,8 @@ export const StepTwo = () => {
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
-      <ProgressBar />
       <fieldset>
-        <legend className="mb-4 font-poppins font-semibold">
+        <legend className="mb-4 font-poppins font-semibold text-center text-xl">
           Datos del Usuario de la VPN
         </legend>
         <Field label="Nombre y Apellido" error={errors?.fullname_2}>
@@ -99,17 +98,6 @@ export const StepTwo = () => {
             placeholder="correo@hsalvador.cl"
           />
         </Field>
-        <div className="flex justify-between w-full gap-2 mt-5">
-          <Link to="/stepone">
-            <Button variant="primary" size="large">
-              <ArrowLeftToLine size={20} />
-              Regresar
-            </Button>
-          </Link>
-          <Button variant="primary" size="large">
-            Siguiente <ArrowRightToLine size={20} />
-          </Button>
-        </div>
       </fieldset>
     </Form>
   );

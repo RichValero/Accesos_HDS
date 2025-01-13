@@ -1,8 +1,6 @@
 import "@fontsource/poppins";
-import { UsersList } from "../components/Dashboard/UsersTable";
-import { FormList } from "../components/Dashboard/FormsTable";
 import { Button } from "../components/Forms";
-import { SideBar } from "../components/SideBar";
+import { SideBar } from "../components/Layout";
 import { useState } from "react";
 
 const Dashboard = () => {
