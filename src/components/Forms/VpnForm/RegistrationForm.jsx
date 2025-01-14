@@ -13,18 +13,17 @@ const FormContent = () => {
     },
   } = useFormContext();
   const { submitForm } = useFormSubmission();
+
   const StepComponent = formConfig.steps[currentStep].component;
 
   return (
     <form onSubmit={submitForm}>
-      <ProgressIndicator currentStep={1} totalSteps={formConfig.totalSteps} />
-      <StepComponent register={register} errors={errors} />
-      <NavigationButton
+      <ProgressIndicator
         currentStep={currentStep}
         totalSteps={formConfig.totalSteps}
-        onNext={handleNextStep}
-        onPrevious={handlePrevStep}
       />
+      <StepComponent />
+      <NavigationButton />
     </form>
   );
 };
