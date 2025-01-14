@@ -2,6 +2,7 @@ export const ProgressIndicator = ({ currentStep, totalSteps }) => (
   <div className="mb-8">
     <div className="flex items-center justify-between">
       {[...array(totalSteps)].map((_, index) => {
+        const step = index + 1;
         return (
           <div
             key={step}

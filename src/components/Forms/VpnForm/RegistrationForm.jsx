@@ -17,9 +17,14 @@ const FormContent = () => {
 
   return (
     <form onSubmit={submitForm}>
-      <ProgressIndicator />
-      <StepComponent />
-      <NavigationButton />
+      <ProgressIndicator currentStep={1} totalSteps={formConfig.totalSteps} />
+      <StepComponent register={register} errors={errors} />
+      <NavigationButton
+        currentStep={currentStep}
+        totalSteps={formConfig.totalSteps}
+        onNext={handleNextStep}
+        onPrevious={handlePrevStep}
+      />
     </form>
   );
 };

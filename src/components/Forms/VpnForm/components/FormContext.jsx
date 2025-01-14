@@ -2,7 +2,7 @@ import react, { createContext, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { vpnValidationSchema } from "../constants/validationSchema";
-// import {formConfig} from ""
+import { formConfig } from "../constants/FormConfig";
 
 const FormContext = createContext(null); //REMEMBER TO LOOK WHAT THIS DOES AND ADDED HERE
 
@@ -21,7 +21,7 @@ export const FormProvider = ({ children }) => {
     isSubmitting,
     setIsSubmitting,
     formMethods,
-    // totalSteps: formConfig.totalSteps TO DO: REMEMBER TO DO THIS COMPONENT AND SEARCH IN DETAIL WHAT IT DOES
+    totalSteps: formConfig.totalSteps, //TO DO: REMEMBER TO DO THIS COMPONENT AND SEARCH IN DETAIL WHAT IT DOES
   };
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>;
