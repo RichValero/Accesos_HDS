@@ -1,5 +1,4 @@
-import { useForm } from "react-hook-form";
-import { useFormContext } from "../components/Forms/Form";
+import { useFormContext } from "./FormContext";
 
 export const FormInput = ({ label, name, type = "text" }) => {
   const {
