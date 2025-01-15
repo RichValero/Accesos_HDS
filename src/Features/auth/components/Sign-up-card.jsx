@@ -51,9 +51,8 @@ export const SignUpForm = () => {
   };
 
   return (
-    <section className="flex items-center min-h-screen">
-      <SideBar />
-      <div className="flex flex-col md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-xl">
+    <section className="min-h-screen pt-10">
+      <div className="flex flex-col mx-auto p-8 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-md">
         <div className="flex justify-center items-center text-xl mb-5">
           {/* {error && <p style={{ color: "red" }}>{error}</p>}
           {success && <p style={{ color: "green" }}>{success}</p>} */}

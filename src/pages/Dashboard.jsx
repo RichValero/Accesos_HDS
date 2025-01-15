@@ -1,7 +1,7 @@
 import "@fontsource/poppins";
-// import { Button } from "../components/Forms";
-import { SideBar } from "../components/Layout";
+import { Button } from "../components/Forms";
 import { useState } from "react";
+import { FormTable, UsersTable } from "../Features/dashboard/components";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("users");
@@ -11,12 +11,9 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="flex gap-5 h-screen">
-      <SideBar />
-
+    <section>
       <div className="w-full px-10 py-5">
-        <UsersList />
-        {/* <Button
+        <Button
           variant="dashboard"
           size="dashboard"
           onClick={() => handleTabChange("users")}
@@ -38,8 +35,8 @@ const Dashboard = () => {
         </Button>
         <Button variant="dashboard" size="dashboard">
           Pendientes
-        </Button> */}
-        {/* {activeTab === "users" ? <UsersList /> : <FormList />} */}
+        </Button>
+        {activeTab === "users" ? <UsersTable /> : <FormTable />}
       </div>
     </section>
   );

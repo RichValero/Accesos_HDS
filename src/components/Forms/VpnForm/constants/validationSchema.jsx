@@ -10,10 +10,10 @@ export const vpnValidationSchema = yup.object().shape({
 
   rut: yup
     .string()
-    // .matches(/^[0-9.-]+$/i, "RUT Invalido")
+    .required("RUT Requerido")
+    .matches(/^[0-9.-]+$/i, "RUT Invalido")
     .min(6, "Minimo 6 caracteres")
-    .max(12, "Maximo 12 caracteres")
-    .required("RUT Requerido"),
+    .max(12, "Maximo 12 caracteres"),
 
   department: yup
     .string()

@@ -1,47 +1,45 @@
-import { House, UserRoundPlusIcon } from "lucide-react";
+import {
+  FileSpreadsheet,
+  House,
+  MailPlus,
+  UserRoundPlusIcon,
+} from "lucide-react";
 import React from "react";
-import { Link } from "react-router-dom";
 
 export const SideBar = () => {
   return (
-    <div className="">
-      <div className="flex flex-col pt-10 items-center min-h-screen space-y-5 bg-white rounded-xl shadow-lg">
-        <div
-          className="flex items-center gap-10 hover:bg-slate-200 hover:rounded-md 
-        hover:cursor-pointer hover:transition-colors duration-500 hover:px-2 hover:py-1"
-        >
-          <House size={30} />
-          <Link to="/dashboard">
-            <p>Home</p>
-          </Link>
-        </div>
-        <div
-          className="flex items-center gap-3 hover:bg-slate-200 hover:rounded-md 
-        hover:cursor-pointer hover:transition-colors duration-500 hover:px-2 hover:py-1"
-        >
-          <UserRoundPlusIcon size={30} />
-          <Link to="/register">
-            <p>Crear Usuario</p>
-          </Link>
-        </div>
-        <div
-          className="flex items-center gap-3 hover:bg-slate-200 hover:rounded-md 
-        hover:cursor-pointer hover:transition-colors duration-500 hover:px-2 hover:py-1"
-        >
-          <UserRoundPlusIcon size={30} />
-          <Link to="/stepone">
-            <p>Solicitud VPN</p>
-          </Link>
-        </div>
-        <div
-          className="flex items-center gap-3 hover:bg-slate-200 hover:rounded-md 
-        hover:cursor-pointer hover:transition-colors duration-500 hover:px-2 hover:py-1"
-        >
-          <UserRoundPlusIcon size={30} />
-          <Link to="/register">
-            <p>Solicitud de Correo</p>
-          </Link>
-        </div>
+    <div className="left-0 top-[100px] w-64 bg-gray-800 text-white p-4">
+      <div className="flex flex-col pt-10 items-center min-h-screen space-y-5 rounded-xl shadow-lg">
+        <nav className="space-y-4 overflow-y-auto h-full">
+          <a
+            href="/dashboard"
+            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+          >
+            <House size={30} />
+            <span>Home</span>
+          </a>
+          <a
+            href="/register"
+            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+          >
+            <UserRoundPlusIcon size={30} />
+            <span>Crear Usuario</span>
+          </a>
+          <a
+            href="/stepone"
+            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+          >
+            <FileSpreadsheet size={30} />
+            <span>Solicitud VPN</span>
+          </a>
+          <a
+            href="/register"
+            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+          >
+            <MailPlus size={30} />
+            <span>Solicitud de Correo</span>
+          </a>
+        </nav>
       </div>
     </div>
   );
