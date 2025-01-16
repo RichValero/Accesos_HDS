@@ -33,7 +33,7 @@ export const SideBar = () => {
             <span>Solicitud VPN</span>
           </a>
           <a
-            href="/register"
+            href="/email"
             className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
           >
             <MailPlus size={30} />

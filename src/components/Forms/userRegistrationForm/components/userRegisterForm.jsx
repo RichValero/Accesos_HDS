@@ -13,7 +13,7 @@ const UserRegisterForm = () => {
   });
 
   return (
-    <section className="min-h-screen pt-5 w-1/2 mx-auto max-w-xl">
+    <section className="min-h-screen pt-5 mx-auto max-w-xl">
       <div className="flex flex-col p-8 rounded-xl shadow-md ring-1 ring-slate-100">
         <div className="pb-4 text-center">
           <legend className="text-3xl font-bold text-[#191F34]">
@@ -21,57 +21,57 @@ const UserRegisterForm = () => {
           </legend>
         </div>
         <form className="flex flex-col" onSubmit={handelSubmit}>
-          <div className="flex flex-col pb-2">
-            <label htmlFor="fullname" className="pb-2">
-              Nombre
+          <div className="flex flex-col pb-3 font-medium">
+            <label htmlFor="fullname" className="pb-2 ">
+              Nombre:
             </label>
             <input
-              {...register("fullname")}
+              {...register("firstname")}
               type="text"
-              id="fullname"
+              id="firstname"
               placeholder="Nombre"
               className="ring-1 ring-gray-300 rounded-md py-2 px-2"
             />
           </div>
-          <div className="flex flex-col pb-1">
-            <label htmlFor="fullname" className="pb-2">
-              Apellido
+          <div className="flex flex-col pb-3 font-medium">
+            <label htmlFor="lastname" className="pb-2">
+              Apellido:
             </label>
             <input
-              {...register("fullname")}
+              {...register("lastname")}
               type="text"
-              id="fullname"
-              placeholder="Nombre Completo"
+              id="lastname"
+              placeholder="Apellido"
               className="ring-1 ring-gray-300 rounded-md py-2 px-2"
             />
           </div>
-          <div className="flex flex-col pb-1">
-            <label htmlFor="fullname" className="pb-2">
-              Departamento
+          <div className="flex flex-col pb-3 font-medium">
+            <label htmlFor="department" className="pb-2">
+              Departamento:
             </label>
             <input
-              {...register("fullname")}
+              {...register("department")}
               type="text"
-              id="fullname"
-              placeholder="Nombre Completo"
+              id="department"
+              placeholder="Departamento"
               className="ring-1 ring-gray-300 rounded-md py-2 px-2"
             />
           </div>
-          <div className="flex flex-col pb-1">
+          <div className="flex flex-col pb-3 font-medium">
             <label htmlFor="fullname" className="pb-2">
-              Correo
+              Correo:
             </label>
             <input
               {...register("email")}
               type="email"
-              id="fullname"
-              placeholder="Nombre Completo"
+              id="email"
+              placeholder="Correo@hsalvador.cl"
               className="ring-1 ring-gray-300 rounded-md py-2 px-2"
             />
           </div>
-          <div className="flex flex-col pb-1">
-            <label htmlFor="fullname" className="pb-2">
-              Cotraseña
+          <div className="flex flex-col pb-1 font-medium">
+            <label htmlFor="password" className="pb-2">
+              Cotraseña:
             </label>
             <input
               {...register("password")}
@@ -85,7 +85,7 @@ const UserRegisterForm = () => {
             <select
               name="role"
               id="role"
-              className="font-bold w-1/2 mb-5 bg-gray-50 text-gray-700 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block  p-2.5 rounded-l-lg py-1 px-4"
+              className="font-bold w-1/2 mb-5 bg-slate-100 text-gray-700 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-slate-200 block  p-2.5 rounded-l-lg py-1 px-4"
             >
               <option value="user" className="font-bold ">
                 Usuario
@@ -96,7 +96,7 @@ const UserRegisterForm = () => {
             </select>
           </div>
         </form>
-        <button className="w-full bg-primary text-white py-2 rounded-md mt-5">
+        <button className="w-full bg-primary text-white py-2 rounded-md mt-5 font-bold text-lg">
           Registrar
         </button>
       </div>

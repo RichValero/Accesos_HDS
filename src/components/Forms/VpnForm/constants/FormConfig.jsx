@@ -1,3 +1,4 @@
+import { StepFour } from "../steps/StepFour";
 import { StepOne } from "../steps/StepOne";
 import { StepThree } from "../steps/StepThree";
 import { StepTwo } from "../steps/StepTwo";
@@ -30,6 +31,10 @@ export const formConfig = {
       ],
       component: StepThree,
     },
+    4: {
+      fields: ["ipaddress", "ports", "justif", "observations"],
+      component: StepFour,
+    },
   },
-  totalSteps: 3,
+  totalSteps: 4,
 };
