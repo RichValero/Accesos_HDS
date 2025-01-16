@@ -10,7 +10,7 @@ export const Layout = ({ children }) => {
         <aside className="w-64 flex-shrink-0">
           <SideBar />
         </aside>
-        <main className="flex-1 p-4">{children}</main>
+        <main className="flex-1 p-4 overflow-hidden">{children}</main>
       </div>
       <Footer />
     </div>

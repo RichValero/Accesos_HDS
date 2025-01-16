@@ -6,30 +6,26 @@ import { Download, Eye, Pencil, Trash2 } from "lucide-react";
 export const TableRow = ({ row, isExpanded, onToggleExpand, isLoading }) => {
   return (
     <>
-      <tr className="even:bg-white odd:bg-slate-100 even:shadow-sm text-center">
-        <td className="px-6 py-4 whitespace-nowrap tablerow">{row.id}</td>
-        <td className="px-6 py-4 whitespace-nowrap tablerow capitalize">
+      <tr className="divide-y divide-gray-200 text-center hover:bg-slate-100 font-poppins">
+        <td className="px-6 py-4 whitespace-nowrap">{row.id}</td>
+        <td className="px-6 py-4 whitespace-nowrap capitalize">
           {row.fullname}
         </td>
-        <td className="px-6 py-4 whitespace-nowrap tablerow">{row.email}</td>
-        <td className="px-6 py-4 whitespace-nowrap tablerow">
-          {row.department}
-        </td>
-        <td className="px-6 py-4 whitespace-nowrap">
+        <td className="px-6 py-4 whitespace-nowrap ">{row.email}</td>
+        <td className="px-6 py-4 whitespace-nowrap">{row.department}</td>
+        <td className="px-6 py-4 whitespace-nowrap ">
           {formatDate(row.created_at)}
         </td>
-        <td className="px-6 py-4 whitespace-nowrap">Activo</td>
-        <td className="px-3 py-4 whitespace-nowrap flex gap-2 ">
+        <td className="px-6 py-4 whitespace-nowrap ">
+          <div className="bg-green-300 text-green-700 rounded-md font-semibold">
+            Activo
+          </div>
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap flex gap-2 items-center justify-center ">
           <Pencil
             strokeWidth={2}
             color="#ededed"
-            className="rounded-xl p-1 cursor-pointer hover:bg-green-900 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-800  to-sky-600 "
-            size={30}
-          />
-          <Trash2
-            strokeWidth={2}
-            color="#ededed"
-            className="bg-red-600 rounded-xl p-1 cursor-pointer hover:bg-red-900 shadow-md shadow-red-300"
+            className="rounded-xl p-1 cursor-pointer bg-[#238c2f] hover:bg-[#2db63d] shadow-md"
             size={30}
           />
           <Eye
@@ -38,8 +34,8 @@ export const TableRow = ({ row, isExpanded, onToggleExpand, isLoading }) => {
             onClick={() => {
               onToggleExpand(row.id);
             }}
-            className={`rounded-xl p-1 cursor-pointer hover:bg-blue-900 ${
-              isExpanded ? "bg-blue-900" : "bg-blue-600"
+            className={`rounded-xl p-1 cursor-pointer hover:bg-[#2474f3] shadow-md ${
+              isExpanded ? "bg-[#2474f3]" : "bg-[#275eb6]"
             }`}
             size={30}
           />
@@ -47,7 +43,13 @@ export const TableRow = ({ row, isExpanded, onToggleExpand, isLoading }) => {
           <Download
             strokeWidth={2}
             color="#ededed"
-            className="rounded-xl p-1 cursor-pointer bg-slate-600 hover:bg-slate-900"
+            className="rounded-xl p-1 cursor-pointer bg-[#5e5e5e] hover:bg-[#919191] shadow-md"
+            size={30}
+          />
+          <Trash2
+            strokeWidth={2}
+            color="#ededed"
+            className="bg-[#a41d1d] rounded-xl p-1 cursor-pointer hover:bg-[#d42c2c] shadow-md"
             size={30}
           />
         </td>

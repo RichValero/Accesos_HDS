@@ -12,30 +12,29 @@ const ExpandedRowContent = ({ userData, isLoading }) => {
   }
 
   const userFields = [
-    { label: "Nombre Completo", value: userData.fullname_2 },
+    { label: "Nombre Completo:", value: userData.fullname_2 },
     { label: "R.U.T.:", value: userData.rut_2 },
-    { label: "Departamento", value: userData.department_2 },
-    { label: "Anexo", value: userData.phone_2 },
-    { label: "Cargo", value: userData.cargo_2 },
-    { label: "Correo", value: userData.email_2 },
+    { label: "Departamento:", value: userData.department_2 },
+    { label: "Anexo:", value: userData.phone_2 },
+    { label: "Cargo:", value: userData.cargo_2 },
+    { label: "Correo:", value: userData.email_2 },
   ];
 
   const autorizationFields = [
-    { label: "Nombre Completo", value: userData.fullname_3 },
+    { label: "Nombre Completo:", value: userData.fullname_3 },
     { label: "R.U.T.:", value: userData.rut_3 },
-    { label: "Departamento", value: userData.department_3 },
-    { label: "Anexo", value: userData.phone_3 },
-    { label: "Cargo", value: userData.cargo_3 },
-    { label: "Correo", value: userData.email_3 },
+    { label: "Departamento:", value: userData.department_3 },
+    { label: "Anexo:", value: userData.phone_3 },
+    { label: "Cargo:", value: userData.cargo_3 },
+    { label: "Correo:", value: userData.email_3 },
   ];
   const deviceFields = [
-    { label: "Nombre Completo", value: userData.ipv4 },
-    { label: "R.U.T.:", value: userData.ports },
-    { label: "Departamento", value: userData.date_time },
+    { label: "Nombre Completo:", value: userData.ipv4 },
+    { label: "Puertos o Protocolos:", value: userData.ports },
   ];
   const othersFields = [
-    { label: "Justificacion de Solicitud", value: userData.justif },
-    { label: "Observaciones", value: userData.observations },
+    { label: "Justificacion de Solicitud:", value: userData.justif },
+    { label: "Observaciones:", value: userData.observations },
   ];
 
   return (
