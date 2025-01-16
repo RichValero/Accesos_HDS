@@ -12,14 +12,19 @@ export const EmailRequestForm = () => {
   });
 
   return (
-    <section className="pt-5 h-screen mx-auto max-w-xl">
-      <div className="flex flex-col justify-center items-center ring-1 ring-gray-300 rounded-md p-8">
-        <legend className="text-2xl font-bold text-center text-primary">
-          Solicitud de Creacion de Correo
-        </legend>
-        <form onSubmit={handleSubmit((data) => console.log(data))}>
-          <div className="pt-5 font-semibold">
-            <label htmlFor="firstname" className="block text-lg pb-2">
+    <section className="pt-5 min-h-screen mx-auto max-w-xl">
+      <div className="flex flex-col justify-center items-center ring-1 ring-gray-300 rounded-xl p-8">
+        <div className="pb-4 text-center">
+          <legend className="text-3xl font-bold text-[#191F34]">
+            Solicitud de Creacion de Correo
+          </legend>
+        </div>
+        <form
+          onSubmit={handleSubmit((data) => console.log(data))}
+          className="w-full space-y-6"
+        >
+          <div className="font-semibold ">
+            <label htmlFor="firstname" className="text-lg pb-2">
               Nombre:
             </label>
             <input
@@ -28,8 +33,8 @@ export const EmailRequestForm = () => {
               className="ring-1 ring-gray-300 rounded-md py-2 px-4 w-full"
             />
           </div>
-          <div className="pt-5 font-semibold">
-            <label htmlFor="lastname" className="block text-lg pb-2">
+          <div className="font-semibold">
+            <label htmlFor="lastname" className="text-lg pb-2">
               Apellido:
             </label>
             <input
@@ -38,8 +43,8 @@ export const EmailRequestForm = () => {
               className="ring-1 ring-gray-300 rounded-md py-2 px-4 w-full"
             />
           </div>
-          <div className="pt-5 font-semibold">
-            <label htmlFor="firstname" className="block text-lg pb-2">
+          <div className="font-semibold">
+            <label htmlFor="firstname" className=" text-lg pb-2">
               Departamento:
             </label>
             <input
@@ -48,8 +53,8 @@ export const EmailRequestForm = () => {
               placeholder="Departamento"
             />
           </div>
-          <div className="pt-5 font-semibold">
-            <label htmlFor="firstname" className="block text-lg pb-2">
+          <div className="font-semibold">
+            <label htmlFor="firstname" className=" text-lg pb-2">
               Correo:
             </label>
             <input

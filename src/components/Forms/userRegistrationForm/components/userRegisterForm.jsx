@@ -20,7 +20,7 @@ const UserRegisterForm = () => {
             Registrar Usuario
           </legend>
         </div>
-        <form className="flex flex-col" onSubmit={handelSubmit}>
+        <form onSubmit={handelSubmit}>
           <div className="flex flex-col pb-3 font-medium">
             <label htmlFor="fullname" className="pb-2 ">
               Nombre:

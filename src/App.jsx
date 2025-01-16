@@ -1,14 +1,12 @@
-import { Navbar, Footer, SideBar } from "./components/Layout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
 import Dashboard from "./pages/Dashboard";
-import Register from "./pages/Register";
 import { RegistrationForm } from "./components/Forms/VpnForm/RegistrationForm";
 import { Layout } from "./components/Layout/Layout";
 import UserRegisterForm from "./components/Forms/userRegistrationForm/components/userRegisterForm";
-import { EmailRequestForm } from "./components/forms/emailRequestForm/components/emailRequesForm";
+import { EmailRequestForm } from "./components/Forms/emailRequestForm/components/emailRequesForm";
 
 export default function App() {
   return (
