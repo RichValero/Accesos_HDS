@@ -19,16 +19,16 @@ export const UsersTable = () => {
 
         setUsers(data);
       } catch (error) {
-        console.error("Error al obtener usuarios:", error);
+        console.error("Error al obtener datos", error);
       }
     };
     fetchAllUsers();
   }, []);
 
   return (
-    <section className="container mx-auto">
+    <section>
       <div className="shadow ring-1 ring-black ring-opacity-5 bg-white">
-        <table className="divide-y divide-gray-300 even:bg-gray-50 odd:bg-white">
+        <table className="divide-y divide-gray-300 even:bg-gray-100 odd:bg-white">
           <thead>
             <tr className="bg-primary text-white text-center">
               <th className="py-1 border p-4">ID</th>

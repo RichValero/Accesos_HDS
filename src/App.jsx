@@ -5,35 +5,27 @@ import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
-// import { Confirm } from "./pages/FormSteps/Confirm";
-//import { AppProvider } from "./hooks/state"; //not needed at the moment
 import { RegistrationForm } from "./components/Forms/VpnForm/RegistrationForm";
-// import FormOne from "./pages/FormSteps/FormOne";
+import { Layout } from "./components/Layout/Layout";
+import UserRegisterForm from "./components/Forms/userRegistrationForm/components/userRegisterForm";
 
 export default function App() {
   return (
-    <div>
+    <>
       <Router>
-        <Navbar />
-        <div className="container flex">
-          <div className="w-full">
-            <SideBar />
-          </div>
-          <div className="w-full">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="contacts" element={<Contacts />} />
-              {/* VPN REQUEST FORM START*/}
-              <Route path="/stepone" element={<RegistrationForm />} />
-              {/* VPN REQUEST FORM END */}
-            </Routes>
-          </div>
-        </div>
-        <Footer />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/register" element={<UserRegisterForm />} />
+            <Route path="contacts" element={<Contacts />} />
+            {/* VPN REQUEST FORM START*/}
+            <Route path="/stepone" element={<RegistrationForm />} />
+            {/* VPN REQUEST FORM END */}
+          </Routes>
+        </Layout>
       </Router>
-    </div>
+    </>
   );
 }

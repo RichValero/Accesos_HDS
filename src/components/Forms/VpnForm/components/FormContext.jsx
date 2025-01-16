@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { vpnValidationSchema } from "../constants/validationSchema";
+import { vpnValidationSchema } from "../schemas/validationSchema";
 import { formConfig } from "../constants/FormConfig";
 
 const FormContext = createContext(null); //REMEMBER TO LOOK WHAT THIS DOES AND ADDED HERE

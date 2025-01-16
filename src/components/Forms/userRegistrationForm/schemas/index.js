@@ -1,0 +1,1 @@
+export { userRegistrationSchema } from "./userRegistrationSchema";

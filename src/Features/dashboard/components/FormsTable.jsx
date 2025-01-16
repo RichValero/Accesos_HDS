@@ -68,7 +68,7 @@ export const FormTable = () => {
 
   return (
     <section>
-      <div className="h-screen relative shadow ring-1 ring-black ring-opacity-5 rounded-lg bg-white">
+      <div className="h-screen relative shadow ring-1 ring-black ring-opacity-5 rounded-lg bg-white border-2 border-red-600">
         <div className="">
           <table className="divide-y divide-gray-300 even:bg-gray-50 odd:bg-white">
             <thead className="bg-gray-50 sticky top-0 z-10">

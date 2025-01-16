@@ -8,7 +8,7 @@ import React from "react";
 
 export const SideBar = () => {
   return (
-    <div className="left-0 top-[100px] w-64 bg-gray-800 text-white p-4">
+    <div className="bg-gray-800 text-white p-4">
       <div className="flex flex-col pt-10 items-center min-h-screen space-y-5 rounded-xl shadow-lg">
         <nav className="space-y-4 overflow-y-auto h-full">
           <a

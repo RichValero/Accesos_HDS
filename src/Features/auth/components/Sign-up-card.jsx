@@ -29,7 +29,6 @@ export const SignUpForm = () => {
 
     try {
       const response = await fetch("http://localhost:5000/users/register", {
-        //http://localhost:5000/users/register http://localhost:5001/api/auth/register
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -51,13 +50,13 @@ export const SignUpForm = () => {
   };
 
   return (
-    <section className="min-h-screen pt-10">
-      <div className="flex flex-col mx-auto p-8 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-md">
+    <section className="min-h-screen pt-10 w-1/2 mx-auto">
+      <div className="flex flex-col mx-auto p-8 2xl:p-12 3xl:p-14 rounded-xl shadow-md ring-1 ring-slate-100">
         <div className="flex justify-center items-center text-xl mb-5">
-          {/* {error && <p style={{ color: "red" }}>{error}</p>}
-          {success && <p style={{ color: "green" }}>{success}</p>} */}
+          {error && <p style={{ color: "red" }}>{error}</p>}
+          {success && <p style={{ color: "green" }}>{success}</p>}
         </div>
-        <div className="flex flex-row gap-3 pb-4 justify-center">
+        <div className="pb-4 text-center">
           <h1 className="text-3xl font-bold text-[#191F34]">
             Registrar Usuario
           </h1>

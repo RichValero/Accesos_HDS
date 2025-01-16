@@ -31,9 +31,9 @@ const FormContent = () => {
 export const RegistrationForm = () => {
   return (
     <FormProvider>
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="max-w-xl mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+      <div className="min-h-screen py-10">
+        <div className="max-w-xl mx-auto">
+          <div className="bg-white rounded-lg shadow-xl p-6 mb-8 ring-1 ring-slate-200">
             <FormContent />
           </div>
         </div>

@@ -23,10 +23,10 @@ export const vpnValidationSchema = yup.object().shape({
 
   phone: yup
     .string()
+    .required("Anexo requerido")
     .matches(/^[0-9]+$/i, "Solo numeros")
     .min(6, "Minimo 6 caracteres")
-    .max(6, "Maximo 6 caracteres")
-    .required("Anexo requerido"),
+    .max(6, "Maximo 6 caracteres"),
 
   email: yup
     .string()

@@ -1,6 +1,6 @@
 import { useCallback } from "react"; //remember to look what this does
-import { useFormContext } from "../vpnForm/components/FormContext";
-import { formConfig } from "../vpnForm/constants/FormConfig"; //REMEMBER TO DO THIS
+import { useFormContext } from "../VpnForm/components/FormContext";
+import { formConfig } from "../VpnForm/constants/FormConfig"; //REMEMBER TO DO THIS
 
 //REMEMBER TO SEARCH WHAT ALL OF THIS DOES AND ADD COMMENTS TO EXPLAIN TO YOURSELF.
 export const useFormNavigation = () => {

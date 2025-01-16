@@ -15,7 +15,7 @@ body,
 }
 
 body {
-  width: 100dvw;
+  width: 100vw;
   overflow-x: hidden;
   height: 100%;
   border-color: #3b3b3b;

@@ -5,6 +5,7 @@ const Register = () => {
   return (
     <div>
       <SignUpForm />
+      {/* <userRegistrationForm/> */}
     </div>
   );
 };
