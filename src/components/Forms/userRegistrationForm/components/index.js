@@ -1,1 +1,0 @@
-export { UserRegisterForm } from "./userRegisterForm";

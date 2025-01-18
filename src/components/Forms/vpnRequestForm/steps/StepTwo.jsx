@@ -1,4 +1,4 @@
-import { FormInput } from "../components/FormInput";
+import { FormInput } from "@/components/forms";
 
 export const StepTwo = ({ register, errors }) => (
   <div className="space-y-6">

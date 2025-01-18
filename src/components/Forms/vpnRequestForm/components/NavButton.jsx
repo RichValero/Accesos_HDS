@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormContext } from "./FormContext";
-import { useFormNavigation } from "../../hooks/useFormNavigation";
+import { useFormNavigation } from "@/components/forms";
 
 //REMEMBER TO ADD VARIANTS FOR BUTTON CUSTOMIZATION AND LOOK WHAT ALL OF THIS DOES AND HOW ITS CONNECTED TO THE OTHER COMPONENTS
 export const NavigationButton = () => {

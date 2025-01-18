@@ -1,7 +1,7 @@
-import { StepFour } from "../steps/StepFour";
-import { StepOne } from "../steps/StepOne";
-import { StepThree } from "../steps/StepThree";
-import { StepTwo } from "../steps/StepTwo";
+import { StepOne } from "../../vpnRequestForm/steps/StepOne";
+import { StepTwo } from "../../vpnRequestForm/steps/StepTwo";
+import { StepThree } from "../../vpnRequestForm/steps/StepThree";
+import { StepFour } from "../../vpnRequestForm/steps/StepFour";
 
 export const formConfig = {
   steps: {
