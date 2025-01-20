@@ -20,7 +20,7 @@ export const Footer = () => {
         </div>
         <div className="flex flex-col items-center px-10">
           <p className="text-white font-semibold">Sigamos Conectados</p>
-          <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-1 py-0.5">
+          <p className="text-white font-semibold hover:bg-gray-700 transition-colors duration-500 rounded px-1 py-0.5">
             <a
               href="https://ticket.hsalvador.cl/Informatica/upload/"
               target="_blank"

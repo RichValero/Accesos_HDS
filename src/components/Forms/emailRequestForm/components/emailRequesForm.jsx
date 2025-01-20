@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { FormLayout } from "@/components/forms";
-import { EmailRequestSchema } from "@/components/forms";
+import { FormLayout } from "@/components/Forms";
+import { EmailRequestSchema } from "@/components/Forms";
 
 export const EmailRequestForm = () => {
   const {
