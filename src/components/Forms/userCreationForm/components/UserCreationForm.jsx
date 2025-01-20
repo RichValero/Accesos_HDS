@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserCreationSchema } from "../schemas/userCreationSchema";
-import { FormLayout } from "../..";
+import { FormLayout } from "@components/Forms";
 
 export const UserCreationForm = () => {
   const {

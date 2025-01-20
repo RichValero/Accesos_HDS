@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 // import { Button } from "../../../components/Forms/index";
 import { Loader2 } from "lucide-react";
 import { TableRow } from "../../../components/Table/TableRow";
+import {
+  TableBody,
+  TableHeader,
+  TableHeaderCell,
+  TableLayout,
+} from "@/components/Table/shared/components/TableLayout";
 export const FormTable = () => {
   const [forms, setForms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -67,33 +73,27 @@ export const FormTable = () => {
   //HANDLING ERROR - END
 
   return (
-    <section className="w-full">
-      <div className="shadow ring-1 ring-black ring-opacity-5 rounded-lg bg-white overflow-x-auto">
-        <table className=" min-w-full divide-y divide-gray-300">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="py-3 px-4 text-center">ID</th>
-              <th className="py-3 px-4 text-center">Nombre</th>
-              <th className="py-3 px-4 text-center">Correo</th>
-              <th className="py-3 px-4 text-center">Departamento</th>
-              <th className="py-3 px-4 text-center">Fecha</th>
-              <th className="py-3 px-4 text-center">Estado</th>
-              <th className="py-3 px-4 text-center">Acciones</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
-            {forms.map((row) => (
-              <TableRow
-                key={row.id}
-                row={row}
-                isExpanded={expandedRow.has(row.id)}
-                onToggleExpand={handleToggleExpand}
-                isLoading={isLoading}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <TableLayout>
+      <TableHeader>
+        <TableHeaderCell>ID</TableHeaderCell>
+        <TableHeaderCell>Nombre</TableHeaderCell>
+        <TableHeaderCell>Correo</TableHeaderCell>
+        <TableHeaderCell>Departamento</TableHeaderCell>
+        <TableHeaderCell>Fecha</TableHeaderCell>
+        <TableHeaderCell>Estado</TableHeaderCell>
+        <TableHeaderCell>Acciones</TableHeaderCell>
+      </TableHeader>
+      <TableBody>
+        {forms.map((row) => (
+          <TableRow
+            key={row.id}
+            row={row}
+            isExpanded={expandedRow.has(row.id)}
+            onToggleExpand={handleToggleExpand}
+            isLoading={isLoading}
+          />
+        ))}
+      </TableBody>
+    </TableLayout>
   );
 };
