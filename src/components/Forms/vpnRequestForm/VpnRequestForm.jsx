@@ -6,7 +6,7 @@ import {
   useFormSubmission,
   formConfig,
   FormLayout,
-} from "@/components/forms";
+} from "@/components/Forms";
 
 const FormContent = () => {
   const {

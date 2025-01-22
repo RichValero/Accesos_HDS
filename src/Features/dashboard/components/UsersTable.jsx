@@ -1,4 +1,11 @@
-import { Eye, Pencil, Trash2 } from "lucide-react";
+import { ActionButtons } from "@/components/Table/shared/components/ActionButtons";
+import {
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableLayout,
+} from "@/components/Table/shared/components/TableLayout";
 import React from "react";
 import { useEffect, useState } from "react";
 export const UsersTable = () => {
@@ -27,68 +34,43 @@ export const UsersTable = () => {
   }, []);
 
   return (
-    <section className="w-full">
-      <div className="shadow ring-1 ring-black ring-opacity-5 bg-white rounded-lg overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-300">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="py-3 px-4 text-center">ID</th>
-              <th className="py-3 px-4 text-center">Nombre</th>
-              <th className="py-3 px-4 text-center">Correo</th>
-              <th className="py-3 px-4 text-center">Departamento</th>
-              <th className="py-3 px-4 text-center">Rol</th>
-              <th className="py-3 px-4 text-center">Estado</th>
-              <th className="py-3 px-4 text-center">Acciones</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
-            {users.map((user) => (
-              <tr
-                key={user.id}
-                className="hover:bg-gray-100 font-poppins font-medium"
-              >
-                <td className="whitespace-nowrap py-4 px-4 text-center">
-                  {user.id}
-                </td>
-                <td className="py-4 px-4 text-center">
-                  {user.firstname} {user.lastname}
-                </td>
-                <td className="py-4 px-4 text-center">{user.email}</td>
-                <td className="py-4 px-4 text-center">{user.department}</td>
-                <td className="py-4 px-4 text-center">{user.role}</td>
-                <td className="py-4 px-4 text-center">
-                  <div className="bg-red-300 text-red-700 rounded-md font-semibold">
-                    Inactivo
-                  </div>
-                </td>
-                <td className="py-4 px-4 text-center flex justify-center items-center gap-2">
-                  <Pencil
-                    strokeWidth={2}
-                    color="#ededed"
-                    className="rounded-xl p-1 cursor-pointer bg-[#238c2f] hover:bg-[#2db63d] shadow-md"
-                    size={30}
-                  />
-                  <Eye
-                    strokeWidth={2}
-                    color="#ededed"
-                    onClick={() => {
-                      onToggleExpand(row.id);
-                    }}
-                    className="rounded-xl p-1 cursor-pointer bg-[#275eb6] hover:bg-[#2474f3] shadow-md"
-                    size={30}
-                  />
-                  <Trash2
-                    strokeWidth={2}
-                    color="#ededed"
-                    className="bg-[#a41d1d] rounded-xl p-1 cursor-pointer hover:bg-[#d42c2c] shadow-md"
-                    size={30}
-                  />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <TableLayout>
+      <TableHeader>
+        <TableHeaderCell>ID</TableHeaderCell>
+        <TableHeaderCell>Nombre</TableHeaderCell>
+        <TableHeaderCell>Correo</TableHeaderCell>
+        <TableHeaderCell>Departamento</TableHeaderCell>
+        <TableHeaderCell>Rol</TableHeaderCell>
+        <TableHeaderCell>Estado</TableHeaderCell>
+        <TableHeaderCell>Acciones</TableHeaderCell>
+      </TableHeader>
+      <TableBody>
+        {users.map((user) => (
+          <tr
+            key={user.id}
+            className="hover:bg-gray-100 font-poppins font-medium"
+          >
+            <TableCell>{user.id}</TableCell>
+            <TableCell>{`${user.firstname} ${user.lastname}`}</TableCell>
+            <TableCell>{user.email}</TableCell>
+            <TableCell>{user.department}</TableCell>
+            <TableCell>{user.role}</TableCell>
+            <TableCell>
+              {" "}
+              <div className="bg-red-300 text-red-700 rounded-md font-semibold">
+                Inactivo
+              </div>
+            </TableCell>
+            <TableCell>
+              <ActionButtons
+                onEdit={() => {}}
+                onView={() => {}}
+                onDelete={() => {}}
+              />
+            </TableCell>
+          </tr>
+        ))}
+      </TableBody>
+    </TableLayout>
   );
 };

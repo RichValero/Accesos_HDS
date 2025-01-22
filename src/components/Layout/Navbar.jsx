@@ -28,14 +28,14 @@ export const Navbar = () => {
           <p className="text-white px-4 font-semibold">
             <Link
               to={"/"}
-              className=" hover:bg-secondary rounded-lg transition-colors duration-500 px-3 py-1"
+              className=" hover:bg-gray-700 rounded transition-colors duration-500 px-3 py-1"
             >
               Inicio
             </Link>
           </p>
           <div className="flex gap-5 items-center">
             <div className="border-l-2 h-7" />
-            <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
+            <p className="text-white font-semibold hover:bg-gray-700 transition-colors duration-500 rounded px-2 py-1">
               <a
                 href="https://ticket.hsalvador.cl/Informatica/upload/"
                 target="_blank"
@@ -44,7 +44,7 @@ export const Navbar = () => {
               </a>
             </p>
             <div className="border-l-2 h-7 " />
-            <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
+            <p className="text-white font-semibold hover:bg-gray-700 transition-colors duration-500 rounded px-2 py-1">
               <a
                 href="http://ticket.movilizacion.hsalvador.cl/"
                 target="_blank"
@@ -53,7 +53,7 @@ export const Navbar = () => {
               </a>
             </p>
             <div className="border-l-2 h-7 " />
-            <p className="text-white font-semibold hover:bg-secondary transition-colors duration-500 rounded-xl px-2 py-1">
+            <p className="text-white font-semibold hover:bg-gray-700 transition-colors duration-500 rounded px-2 py-1">
               <Link to={"/contacts"}>Contactos Servicios</Link>
             </p>
             <p className="text-white font-bold text-2xl absolute right-10 max-2xl:hidden sm:max-lg:hidden xsm:max-lg:hidden">

@@ -8,9 +8,9 @@ import React from "react";
 
 export const SideBar = () => {
   return (
-    <div className="bg-gray-800 text-white p-4">
-      <div className="flex flex-col pt-10 items-center min-h-screen space-y-5 rounded-xl shadow-lg">
-        <nav className="space-y-4 overflow-y-auto h-full">
+    <div className="h-full text-white p-4">
+      <div className="flex flex-col pt-10 items-center space-y-5 ">
+        <nav className="space-y-4 ">
           <a
             href="/dashboard"
             className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"

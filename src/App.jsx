@@ -8,7 +8,7 @@ import {
   VpnRequestForm,
   UserCreationForm,
   EmailRequestForm,
-} from "./components/forms/";
+} from "@/components/Forms";
 
 export default function App() {
   return (

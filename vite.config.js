@@ -10,7 +10,7 @@ export default defineConfig({
       // This creates an '@' alias pointing to your src directory
       "@": path.resolve(__dirname, "./src"),
       // You can add more aliases for specific directories
-      "@forms": path.resolve(__dirname, "./src/components/forms"),
+      "@forms": path.resolve(__dirname, "./src/components/Forms"),
       "@components": path.resolve(__dirname, "./src/components"),
     },
   },
