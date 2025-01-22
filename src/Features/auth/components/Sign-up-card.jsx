@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SideBar } from "../../../components/Layout";
 
 export const SignUpForm = () => {
   const [formData, setFormData] = useState({

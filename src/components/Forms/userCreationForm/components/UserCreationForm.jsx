@@ -7,7 +7,7 @@ import { FormLayout } from "../..";
 export const UserCreationForm = () => {
   const {
     register,
-    handelSubmit,
+    handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(UserCreationSchema),
@@ -15,7 +15,7 @@ export const UserCreationForm = () => {
 
   return (
     <FormLayout title="Registrar Usuario">
-      <form className="flex flex-col" onSubmit={handelSubmit}>
+      <form className="flex flex-col" onSubmit={handleSubmit}>
         <div className="flex flex-col pb-3 font-medium">
           <label htmlFor="fullname" className="pb-2 ">
             Nombre:
