@@ -22,7 +22,7 @@ export const FormInput = ({ label, name, type = "text", placeholder }) => {
         placeholder={placeholder}
         type={type}
         id={name}
-        className={`w-full px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
+        className={`w-full px-3 py-2 border rounded-md shadow-sm focus:border-blue-500 ${
           error ? "border-red-500" : "border-gray-300"
         }`}
       />

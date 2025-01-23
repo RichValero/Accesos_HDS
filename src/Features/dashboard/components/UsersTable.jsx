@@ -14,7 +14,7 @@ export const UsersTable = () => {
   useEffect(() => {
     const fetchAllUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users/userlist", {
+        const response = await fetch("http://localhost:5000/users/all", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -47,11 +47,11 @@ export const UsersTable = () => {
       <TableBody>
         {users.map((user) => (
           <tr
-            key={user.id}
+            key={user.user_id}
             className="hover:bg-gray-100 font-poppins font-medium"
           >
-            <TableCell>{user.id}</TableCell>
-            <TableCell>{`${user.firstname} ${user.lastname}`}</TableCell>
+            <TableCell>{user.user_id}</TableCell>
+            <TableCell>{`${user.first_name} ${user.last_name}`}</TableCell>
             <TableCell>{user.email}</TableCell>
             <TableCell>{user.department}</TableCell>
             <TableCell>{user.role}</TableCell>

@@ -8,7 +8,7 @@ export { EmailRequestForm } from "./emailRequestForm/components/emailRequesForm"
 
 //SHARED COMPONENTS EXPORTS START
 export { FormLayout } from "./shared/components/FormLayout";
-export { FormInput } from "./shared/components/FormInput";
+export { FormInput } from "./vpnRequestForm/components/FormInput";
 //SHARED COMPONENTS EXPORTS END
 
 //SHARED HOOKS AND CONSTANTS EXPORTS START
