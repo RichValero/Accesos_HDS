@@ -1,12 +1,13 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserCreationSchema } from "../schemas/userCreationSchema";
 import { FormLayout } from "@components/forms";
 import { InputField } from "../../shared/components/InputField";
+import { useState } from "react";
 
-export const UserCreationForm = () => {
-  const [successMessage, setSuccessMessage] = React.useState("");
+export const CreateUserForm = () => {
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -42,35 +43,40 @@ export const UserCreationForm = () => {
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         {successMessage && <p>{successMessage}</p>}
         <InputField
-          title="Nombre"
-          register={register}
+          label="Nombre:"
           name="first_name"
+          register={register}
+          errors={errors}
           placeholder="Diego"
         />
         <InputField
-          title="Apellido"
-          register={register}
+          label="Apellido:"
           name="last_name"
+          register={register}
+          errors={errors}
           placeholder="Ortiz"
         />
         <InputField
-          title="Departamento"
-          register={register}
+          label="Servicio o Departamento:"
           name="department"
+          register={register}
+          errors={errors}
           placeholder="Departamento de Informatica"
         />
         <InputField
-          title="Correo"
-          register={register}
+          label="Correo:"
           type="email"
           name="email"
+          register={register}
+          errors={errors}
           placeholder="correo@hsalvador.cl"
         />
         <InputField
-          title="Contraseña"
-          register={register}
+          label="Contraseña:"
           name="password"
           type="password"
+          register={register}
+          errors={errors}
           placeholder="*******"
         />
         <div className="flex text-gray-400 justify-center pt-5">

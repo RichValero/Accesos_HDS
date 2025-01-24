@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import { Layout } from "./components/Layout/Layout";
 import {
   VpnRequestForm,
-  UserCreationForm,
+  CreateUserForm,
   EmailRequestForm,
 } from "@/components/forms";
 
@@ -19,7 +19,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/register" element={<UserCreationForm />} />
+            <Route path="/register" element={<CreateUserForm />} />
             <Route path="/email" element={<EmailRequestForm />} />
             <Route path="contacts" element={<Contacts />} />
             {/* VPN REQUEST FORM START*/}

@@ -1,7 +1,7 @@
 export { Button } from "./Button";
 
 // FORMS EXPORTS START
-export { UserCreationForm } from "./userCreationForm/components/UserCreationForm";
+export { CreateUserForm } from "./userCreationForm/components/CreateUserForm";
 export { VpnRequestForm } from "./vpnRequestForm/VpnRequestForm";
 export { EmailRequestForm } from "./emailRequestForm/components/emailRequesForm";
 //FORMS EXPORTS END

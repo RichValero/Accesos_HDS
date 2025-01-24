@@ -2,30 +2,31 @@ import React from "react";
 
 export const InputField = ({
   label,
-  title,
   name,
   register,
-  error,
+  errors,
   type = "text",
   placeholder,
-  ...props
+  ...rest
 }) => {
   return (
     <div className="flex flex-col pb-3 font-medium">
       <label htmlFor={name} className="pb-2">
-        {title}
+        {label}
       </label>
       <input
-        {...register(name)}
-        type={type}
         id={name}
-        {...props}
+        type={type}
+        {...register(name)}
         placeholder={placeholder}
-        className={`w-full px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
-          error ? "border-red-500" : "border-gray-300"
+        className={`w-full px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500  ${
+          errors[name] ? "border-red-500" : "ring-gray-300"
         }`}
+        {...rest}
       />
-      {error && <p className="mt-1 text-sm text-red-600">{error.message}</p>}
+      {errors[name] && (
+        <p className="mt-1 text-sm text-red-600">{errors[name].message}</p>
+      )}
     </div>
   );
 };
