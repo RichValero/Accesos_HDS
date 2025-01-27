@@ -19,7 +19,7 @@ export const UserCreationSchema = yup.object().shape({
     .required("Campo requerido")
     .matches(/^[A-Za-z_ ]+$/i, "Solo letras son permitidas")
     .min(6, "Minimo 6 caracteres sin punto ni guion")
-    .max(12, "Maximo 12 caracteres, se incluyen puntos y guion"),
+    .max(50, "Maximo 50 caracteres"),
 
   email: yup
     .string()

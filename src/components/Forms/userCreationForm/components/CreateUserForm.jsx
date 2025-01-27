@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserCreationSchema } from "../schemas/userCreationSchema";
+import { useUserRegistration } from "@/features/auth/hooks/useUserRegistration";
 import { FormLayout } from "@components/forms";
 import { InputField } from "../../shared/components/InputField";
 import { useState } from "react";
+import { SuccessModal } from "@/components/common/SuccessModal";
+import { ErrorAlert } from "@/components/common/ErrorAlert";
 
 export const CreateUserForm = () => {
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const { registerUser, isLoading, error, success } = useUserRegistration();
 
   const {
     register,
@@ -16,32 +19,29 @@ export const CreateUserForm = () => {
     reset,
   } = useForm({
     resolver: yupResolver(UserCreationSchema),
+    defaultValues: {
+      first_name: "",
+      last_name: "",
+      department: "",
+      email: "",
+      password: "",
+      role: "user",
+    },
   });
 
   const onSubmit = async (data) => {
-    try {
-      const response = await fetch("http://localhost:5000/users/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) {
-        throw new Error("Algo no funciona, intentalo de nuevo");
-      }
-      const responseData = await response.json();
-      setSuccessMessage("Usuario creado exitosamente", responseData);
-    } catch (error) {
-      console.error("Error al registrar usuario:", error.message);
-      setSuccessMessage("Error al registrar usuario");
+    const registrationSuccess = await registerUser(data);
+
+    if (registrationSuccess) {
+      setIsSuccessModalOpen(true);
+      reset();
     }
   };
 
   return (
     <FormLayout title="Registrar Usuario">
+      {error && <ErrorAlert message={error} onClose={() => setError(null)} />}
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-        {successMessage && <p>{successMessage}</p>}
         <InputField
           label="Nombre:"
           name="first_name"
@@ -96,9 +96,16 @@ export const CreateUserForm = () => {
           type="submit"
           className="w-full bg-primary text-white py-2 rounded-md mt-5 font-bold text-lg"
         >
-          Registrar
+          {isLoading ? "Registrando" : "Registrar"}
         </button>
       </form>
+
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => {
+          setIsSuccessModalOpen(false);
+        }}
+      />
     </FormLayout>
   );
 };

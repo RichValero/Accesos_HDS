@@ -19,16 +19,13 @@ export const EmailRequestForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(
-        "http://localhost:5000/email/requestregister",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch("http://localhost:5000/email/emailrequest", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (!response.ok) {
         throw new Error("Algo no funciona, intentalo de nuevo");
