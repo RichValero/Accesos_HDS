@@ -53,7 +53,7 @@ export const SignInCard = () => {
 
   return (
     <section className="flex justify-center items-center min-h-screen">
-      <div className="bg-white rounded-lg shadow-lg flex w-1/10 max-w-5xl overflow-hidden">
+      <div className="bg-white ring-1 ring-gray-300 rounded-lg shadow-lg flex w-1/10 max-w-5xl overflow-hidden">
         <div className="w-1/3 bg-primary text-white p-8 flex flex-col items-center">
           <div className="flex flex-col justify-center items-center space-y-2.5">
             <h2 className="text-4xl font-bold ">BIENVENIDO</h2>
@@ -124,14 +124,13 @@ export const SignInCard = () => {
               <div className="flex justify-center pt-5">
                 <button
                   type="submit"
-                  className="w-1/2 text-white bg-[#191f34] focus:ring-2 focus:outline-none p-2 mb-10 rounded-xl"
+                  className="w-1/2 text-white bg-[#191f34] focus:ring-2 focus:outline-none p-2 mb-10 rounded-md"
                 >
                   Iniciar Sesión
                 </button>
               </div>
               <p className="flex justify-center text-center font-poppins">
-                Cuenta son solo para jefaturas. <br />
-                Son creadas por informatica.
+                Cuentas creadas por informatica.
               </p>
             </form>
           </div>

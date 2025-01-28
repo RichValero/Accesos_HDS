@@ -28,7 +28,7 @@ export const headerList = [
   },
   {
     imgUrl: "./assets/phone.png",
-    label: "CLAVE AMARILLA (254243)",
+    label: "Clave Amarilla (254243)",
   },
 ];
 

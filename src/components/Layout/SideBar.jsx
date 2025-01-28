@@ -1,6 +1,7 @@
 import {
   FileSpreadsheet,
   House,
+  LogIn,
   MailPlus,
   UserRoundPlusIcon,
 } from "lucide-react";
@@ -11,6 +12,13 @@ export const SideBar = () => {
     <div className="h-full text-white p-4">
       <div className="flex flex-col pt-10 items-center space-y-5 ">
         <nav className="space-y-4 ">
+          <a
+            href="/login"
+            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+          >
+            <LogIn size={30} />
+            <span>Iniciar Sesion</span>
+          </a>
           <a
             href="/dashboard"
             className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
