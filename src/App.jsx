@@ -9,23 +9,33 @@ import {
   CreateUserForm,
   EmailRequestForm,
 } from "@/components/forms";
+import { AuthProvider } from "./features/auth/services/authProvider";
 
 export default function App() {
   return (
     <>
       <Router>
         <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/register" element={<CreateUserForm />} />
-            <Route path="/email" element={<EmailRequestForm />} />
-            <Route path="contacts" element={<Contacts />} />
-            {/* VPN REQUEST FORM START*/}
-            <Route path="/stepone" element={<VpnRequestForm />} />
-            {/* VPN REQUEST FORM END */}
-          </Routes>
+          <AuthProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/register" element={<CreateUserForm />} />
+              <Route path="/email" element={<EmailRequestForm />} />
+              <Route path="contacts" element={<Contacts />} />
+              {/* VPN REQUEST FORM START*/}
+              <Route path="/stepone" element={<VpnRequestForm />} />
+              {/* VPN REQUEST FORM END */}
+            </Routes>
+          </AuthProvider>
         </Layout>
       </Router>
     </>
