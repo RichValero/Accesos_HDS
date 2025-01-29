@@ -1,8 +1,7 @@
-import { InputField } from "@/components/Forms/shared/components/InputField";
-import { useState } from "react";
+import { InputField } from "@/components/forms/shared/components/InputField";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/authState";
 import { useForm } from "react-hook-form";
+import { useAuth } from "../services/useAuthContext";
 
 export const SignInCard = () => {
   const { login } = useAuth();

@@ -1,3 +1,12 @@
+import {
+  House,
+  LogIn,
+  MailPlus,
+  UserRoundPlusIcon,
+  Shield,
+  ListCollapse,
+} from "lucide-react";
+
 export const NavList = [
   {
     route: "/",
@@ -230,5 +239,47 @@ export const contactList = [
     id: 6,
     title: "MANTENCIÓN",
     subtitle: "Anexo: 254213",
+  },
+];
+
+export const sideBarList = [
+  {
+    id: 0,
+    icon: House,
+    label: "Inicio",
+    url: "/",
+  },
+  {
+    id: 1,
+    icon: ListCollapse,
+    label: "Lista de Solicitudes",
+    url: "/dashboard",
+  },
+  {
+    id: 2,
+    icon: Shield,
+    label: "Solicitud de VPN",
+    url: "/stepone",
+  },
+  {
+    id: 3,
+    icon: MailPlus,
+    label: "Solicitud de Correo",
+    url: "/email",
+  },
+  {
+    id: 4,
+    icon: House,
+    label: "Perfil",
+    url: "#",
+  },
+];
+
+export const adminSideBarList = [
+  {
+    id: 0,
+    icon: UserRoundPlusIcon,
+    label: "Crear Usuario",
+    url: "/register",
   },
 ];

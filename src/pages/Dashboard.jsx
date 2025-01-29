@@ -1,5 +1,5 @@
 import "@fontsource/poppins";
-import { Button } from "../components/Forms";
+import { Button } from "../components/forms";
 import { useState } from "react";
 import { FormTable, UsersTable } from "../Features/dashboard/components";
 

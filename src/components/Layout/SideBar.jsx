@@ -1,54 +1,73 @@
 import {
   FileSpreadsheet,
   House,
+  HouseIcon,
   LogIn,
+  LogOut,
   MailPlus,
   UserRoundPlusIcon,
 } from "lucide-react";
-import React from "react";
+import { useAuth } from "../../features/auth/services/useAuthContext";
+import { sideBarList, adminSideBarList } from "../../utils/constants";
 
 export const SideBar = () => {
+  const { user, isAdmin, isAuthenticated, logout } = useAuth();
+
+  const navItems = isAdmin
+    ? [...sideBarList, ...adminSideBarList]
+    : sideBarList;
+
   return (
     <div className="h-full text-white p-4">
       <div className="flex flex-col pt-10 items-center space-y-5 ">
         <nav className="space-y-4 ">
-          <a
-            href="/login"
-            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
-          >
-            <LogIn size={30} />
-            <span>Iniciar Sesion</span>
-          </a>
-          <a
-            href="/dashboard"
-            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
-          >
-            <House size={30} />
-            <span>Home</span>
-          </a>
-          <a
-            href="/register"
-            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
-          >
-            <UserRoundPlusIcon size={30} />
-            <span>Crear Usuario</span>
-          </a>
-          <a
-            href="/stepone"
-            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
-          >
-            <FileSpreadsheet size={30} />
-            <span>Solicitud VPN</span>
-          </a>
-          <a
-            href="/email"
-            className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
-          >
-            <MailPlus size={30} />
-            <span>Solicitud de Correo</span>
-          </a>
+          {isAuthenticated ? (
+            <>
+              {navItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.url}
+                  className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+                >
+                  <item.icon size={30} />
+                  <span className={`isActive ? "bg-secondary opacity-50" : ""`}>
+                    {item.label}
+                  </span>
+                </a>
+              ))}
+            </>
+          ) : (
+            <>
+              <a
+                href="/"
+                className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+              >
+                <HouseIcon size={30} />
+                <span>Inicio</span>
+              </a>
+              <a
+                href="/login"
+                className="flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins"
+              >
+                <LogIn size={30} />
+                <span>Iniciar Sesion</span>
+              </a>
+            </>
+          )}
         </nav>
       </div>
+
+      {isAuthenticated && (
+        <div className="pt-4 border-t border-gray-700 mt-auto">
+          <button
+            onClick={logout}
+            className="w-full flex items-center space-x-3 p-2 rounded hover:bg-gray-700 transition duration-300 font-poppins text-red-400"
+          >
+            <LogOut size={30} />
+            <span>Cerrar Sesión</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
