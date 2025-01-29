@@ -16,8 +16,8 @@ export default function App() {
   return (
     <>
       <Router>
-        <Layout>
-          <AuthProvider>
+        <AuthProvider>
+          <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -43,8 +43,8 @@ export default function App() {
               <Route path="/stepone" element={<VpnRequestForm />} />
               {/* VPN REQUEST FORM END */}
             </Routes>
-          </AuthProvider>
-        </Layout>
+          </Layout>
+        </AuthProvider>
       </Router>
     </>
   );
