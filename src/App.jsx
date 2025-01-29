@@ -9,7 +9,8 @@ import {
   CreateUserForm,
   EmailRequestForm,
 } from "@/components/forms";
-import { AuthProvider } from "./features/auth/services/authProvider";
+import { AuthProvider } from "./Features/auth/hooks/authState";
+import { ProtectedRoute } from "./Features/auth/services/protectedRoute";
 
 export default function App() {
   return (
@@ -28,7 +29,14 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route path="/register" element={<CreateUserForm />} />
+              <Route
+                path="/register"
+                element={
+                  <ProtectedRoute>
+                    <CreateUserForm />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/email" element={<EmailRequestForm />} />
               <Route path="contacts" element={<Contacts />} />
               {/* VPN REQUEST FORM START*/}
