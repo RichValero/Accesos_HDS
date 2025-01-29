@@ -1,53 +1,40 @@
+import { InputField } from "@/components/Forms/shared/components/InputField";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/authState";
+import { useForm } from "react-hook-form";
 
 export const SignInCard = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const values = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
 
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, errors },
+    setError,
+  } = values;
 
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSuccess("");
-
+  const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      await login(data);
+
+      //navitate to dashboard intended route or dashboard on success
+      const intendedPath = location.state?.from?.pathname || "/dashboard";
+      navigate(intendedPath, { replace: true });
+    } catch (error) {
+      setError("root", {
+        type: "manual",
+        message: "Usuario o contraseña incorrecto. Porfavor intenta de nuevo",
       });
-
-      if (!response.ok) {
-        setError(errorData.message || "Algo no funciona, intentalo de nuevo");
-      }
-
-      const data = await response.json();
-      const token = data.token;
-
-      localStorage.setItem("authToken", token);
-
-      setSuccess("Inicio de sesion exitoso, redirigiendo");
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 1000);
-    } catch (err) {
-      setError(
-        err.response?.data?.message || "Usuario o contraseña incorrectos"
-      );
     }
   };
 
@@ -68,7 +55,10 @@ export const SignInCard = () => {
         </div>
         <div className="flex flex-col md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 rounded-lg">
           <div className="flex justify-center">
-            <form className="flex flex-col w-full" onSubmit={handleSubmit}>
+            <form
+              className="flex flex-col w-full"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="flex items-center mb-10 pl-10">
                 <img
                   src="./assets/hds.png"
@@ -79,54 +69,30 @@ export const SignInCard = () => {
                   HOSPITAL DEL SALVADOR
                 </h1>
               </div>
-              <div className="flex flex-col pb-2">
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-md font-medium text-[#111827]"
-                >
-                  Correo
-                </label>
-                <div className="relative w-[350px]">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="px-3 ring-1 ring-gray-400  h-10 rounded-md mx-auto mb-3  w-full"
-                    required
-                    placeholder="correo@hsalvador.cl"
-                    autoComplete="off"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div className="pb-4">
-                <label
-                  htmlFor="password"
-                  className="block mb-2 text-md font-medium text-[#111827]"
-                >
-                  Contraseña
-                </label>
-                <div className="relative w-[350px]">
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    className="px-3 ring-1 ring-gray-400  rounded-md h-10 mb-4 w-full text-slate-700 "
-                    required
-                    placeholder="********"
-                    autoComplete="off"
-                    value={formData.password}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
+              <InputField
+                label="Correo"
+                name="email"
+                type="email"
+                register={register}
+                errors={errors}
+                disabled={isSubmitting}
+                placeholder="correo@hsalvador.cl"
+              />
+              <InputField
+                label="Contraseña"
+                name="password"
+                type="password"
+                register={register}
+                errors={errors}
+                disabled={isSubmitting}
+                placeholder="contraseña"
+              />
               <div className="flex justify-center pt-5">
                 <button
                   type="submit"
                   className="w-1/2 text-white bg-[#191f34] focus:ring-2 focus:outline-none p-2 mb-10 rounded-md"
                 >
-                  Iniciar Sesión
+                  {isSubmitting ? "Redirigiendo..." : "Iniciar sesion"}
                 </button>
               </div>
               <p className="flex justify-center text-center font-poppins">

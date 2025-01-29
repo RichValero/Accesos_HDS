@@ -7,6 +7,7 @@ export const InputField = ({
   errors,
   type = "text",
   placeholder,
+  disabled,
   ...rest
 }) => {
   return (
@@ -17,6 +18,7 @@ export const InputField = ({
       <input
         id={name}
         type={type}
+        disabled={disabled}
         {...register(name)}
         placeholder={placeholder}
         className={`w-full px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500  ${
