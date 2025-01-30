@@ -26,8 +26,8 @@ export const SignInCard = () => {
     try {
       await login(data);
 
-      //navitate to dashboard intended route or dashboard on success
-      const intendedPath = location.state?.from?.pathname || "/dashboard";
+      //navitate to intended route or dashboard on success
+      const intendedPath = location.state?.from?.pathname || "/";
       navigate(intendedPath, { replace: true });
     } catch (error) {
       setError("root", {
