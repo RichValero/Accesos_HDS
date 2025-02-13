@@ -19,7 +19,7 @@ export const EmailRequestForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:5000/email/emailrequest", {
+      const response = await fetch("http://localhost:3000/email-request", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -41,43 +41,43 @@ export const EmailRequestForm = () => {
   return (
     <FormLayout
       title="Solicitud de Creacion de correo"
-      label="Ingresa los datos del funcionario(a) que requiere el correo"
+      label="Ingrese los datos del funcionario(a)"
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputField
           label="Nombre:"
-          name="first_name"
+          name="firstName"
           register={register}
           errors={errors}
-          placeholder="Nombre"
+          placeholder="Ingrese nombre"
         />
         <InputField
           label="Apellidos:"
-          name="last_name"
+          name="lastName"
           register={register}
           errors={errors}
-          placeholder="Primer y Segundo"
+          placeholder="Ingrese apellidos"
         />
         <InputField
           label="Servicio o Departamento:"
           name="department"
           register={register}
           errors={errors}
-          placeholder="Departamento o servicio"
+          placeholder="Ingrese departamento o servicio"
         />
         <InputField
           label="Cargo:"
           name="role"
           register={register}
           errors={errors}
-          placeholder="EU / TENS / COORDINADOR(A)"
+          placeholder="Ingrese cargo del funcionario(a)"
         />
         <InputField
           label="Anexo:"
           name="phone"
           register={register}
           errors={errors}
-          placeholder="123456"
+          placeholder="Ingrese anexo del funcionario(a)"
         />
         <button
           type="submit"

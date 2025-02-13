@@ -1,13 +1,13 @@
 import * as yup from "yup";
 
 export const UserCreationSchema = yup.object().shape({
-  first_name: yup
+  firstName: yup
     .string()
     .required("Campo requerido")
     .matches(/^[A-Za-z_ ]+$/i, "Solo letras son permitidas")
     .max(50, "Maximo 50 caracteres"),
 
-  last_name: yup
+  lastName: yup
     .string()
     .required("Campo requerido")
     .matches(/^[A-Za-z_ ]+$/i, "Solo letras son permitidas")
@@ -34,6 +34,12 @@ export const UserCreationSchema = yup.object().shape({
     .required("Campo requerido")
     .min(6, "Minimo 6 caracteres")
     .matches(/[A-Z]/, "Debe contener al menos una letra mayúscula"),
+
+  company_role: yup
+    .string()
+    .required("Campo requerido")
+    .min(6, "Minimo 6 caracteres")
+    .matches(/^[A-Za-z_ ]+$/i, "Solo letras son permitidas"),
 
   role: yup
     .string()

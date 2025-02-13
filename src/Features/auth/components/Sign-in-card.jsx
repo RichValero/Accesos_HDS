@@ -1,10 +1,8 @@
 import { InputField } from "@/components/forms/shared/components/InputField";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../services/useAuthContext";
 
 export const SignInCard = () => {
-  const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 

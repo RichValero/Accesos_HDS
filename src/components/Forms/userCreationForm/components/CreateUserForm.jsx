@@ -1,16 +1,12 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserCreationSchema } from "../schemas/userCreationSchema";
-import { useUserRegistration } from "@/features/auth/hooks/useUserRegistration";
 import { FormLayout } from "@components/forms";
 import { InputField } from "../../shared/components/InputField";
 import { useState } from "react";
-import { SuccessModal } from "@/components/common/SuccessModal";
-import { ErrorAlert } from "@/components/common/ErrorAlert";
 
 export const CreateUserForm = () => {
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-  const { registerUser, isLoading, error, success } = useUserRegistration();
 
   const {
     register,
@@ -20,48 +16,46 @@ export const CreateUserForm = () => {
   } = useForm({
     resolver: yupResolver(UserCreationSchema),
     defaultValues: {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       department: "",
       email: "",
       password: "",
+      company_role: "",
       role: "user",
     },
   });
 
-  const onSubmit = async (data) => {
-    const registrationSuccess = await registerUser(data);
-
-    if (registrationSuccess) {
-      setIsSuccessModalOpen(true);
-      reset();
-    }
-  };
-
   return (
     <FormLayout title="Registrar Usuario">
-      {error && <ErrorAlert message={error} onClose={() => setError(null)} />}
-      <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+      <form className="flex flex-col" onSubmit={handleSubmit}>
         <InputField
           label="Nombre:"
           name="first_name"
           register={register}
           errors={errors}
-          placeholder="Diego"
+          placeholder="Ingrese el nombre del usuario"
         />
         <InputField
           label="Apellido:"
           name="last_name"
           register={register}
           errors={errors}
-          placeholder="Ortiz"
+          placeholder="Ingrese ambos apellidos del usuario"
         />
         <InputField
           label="Servicio o Departamento:"
           name="department"
           register={register}
           errors={errors}
-          placeholder="Departamento de Informatica"
+          placeholder="Ingrese el departamente al que pertenece el usuario"
+        />
+        <InputField
+          label="Cargo:"
+          name="cargo"
+          register={register}
+          errors={errors}
+          placeholder="Ingrese el cargo del usuario"
         />
         <InputField
           label="Correo:"
@@ -96,16 +90,9 @@ export const CreateUserForm = () => {
           type="submit"
           className="w-full bg-primary text-white py-2 rounded-md mt-5 font-bold text-lg"
         >
-          {isLoading ? "Registrando" : "Registrar"}
+          Registrar
         </button>
       </form>
-
-      <SuccessModal
-        isOpen={isSuccessModalOpen}
-        onClose={() => {
-          setIsSuccessModalOpen(false);
-        }}
-      />
     </FormLayout>
   );
 };

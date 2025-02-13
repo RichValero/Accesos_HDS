@@ -9,8 +9,6 @@ import {
   CreateUserForm,
   EmailRequestForm,
 } from "@/components/forms";
-// import { AuthProvider } from "./features/auth/services/AuthProvider";
-// import { ProtectedRoute } from "./features/auth/services/protectedRoute";
 
 export default function App() {
   return (
