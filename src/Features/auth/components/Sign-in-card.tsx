@@ -1,6 +1,7 @@
 import { InputField } from "@/components/forms/shared/components/InputField";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export const SignInCard = () => {
   const navigate = useNavigate();
