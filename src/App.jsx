@@ -9,24 +9,30 @@ import {
   CreateUserForm,
   EmailRequestForm,
 } from "@/components/forms";
+import TokenRefresher from "./Features/auth/components/TokenRefresher";
+import ProtectedRoutes from "./Features/auth/components/ProtectedRoutes";
+import { AuthProvider } from "./Features/auth/stores/AuthContext";
+import LoginForm from "./Features/auth/components/LoginForm";
 
 export default function App() {
   return (
-    <>
+    <AuthProvider>
       <Router>
-        <Layout>
-          <Routes>
+        <TokenRefresher />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/login" element={<LoginForm />} />
             <Route path="/" element={<Home />} />
             <Route path="contacts" element={<Contacts />} />
-            <Route path="/login" element={<Login />} />
-
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/register" element={<CreateUserForm />} />
-            <Route path="/email" element={<EmailRequestForm />} />
-            <Route path="/stepone" element={<VpnRequestForm />} />
-          </Routes>
-        </Layout>
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/register" element={<CreateUserForm />} />
+              <Route path="/email" element={<EmailRequestForm />} />
+              <Route path="/stepone" element={<VpnRequestForm />} />
+            </Route>
+          </Route>
+        </Routes>
       </Router>
-    </>
+    </AuthProvider>
   );
 }
